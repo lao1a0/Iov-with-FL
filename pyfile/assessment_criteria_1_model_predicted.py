@@ -1,0 +1,170 @@
+import torch
+from torch import nn
+from torch.utils.data import DataLoader
+from utils import LoadData, write_result
+import pandas as pd
+import os
+from sklearn.metrics import *  # pip install scikit-learn
+import matplotlib.pyplot as plt  # pip install matplotlib
+import numpy as np  # pip install numpy
+from numpy import interp
+from sklearn.preprocessing import label_binarize
+import torchvision
+from datetime import datetime
+
+class Arguments():
+    def __init__(self):
+        self.model_name = 'alexnet' # cnn vgg16 resnet18
+        self.data_name = 'yeo' # yeo quantile_ransformer
+        self.verify_root = r"../data2/test_{}_224/".format(self.data_name)
+        self.predicted_label_txt = '../files/predicted_label_{}_{}.txt'.format(self.model_name, self.data_name)
+        self.true_label_txt = '../files/true_label_{}_{}.txt'.format(self.model_name, self.data_name)  # 正确标签的位置
+        self.model_weight = "../model/{}_{}_lr0.01_epoch50.pt".format(self.data_name, self.model_name)
+        self.flag = 'alexnet'  # CNN vgg16 vgg16
+        self.save_name = '{}_{}_lr0.01_epochs50_test'.format(self.model_name, self.data_name)
+        self.confusion_name = '{}_{}_lr0.01_epoch50_test_confusion'.format(self.model_name, self.data_name)
+        self.roc_name = '{}_{}_lr0.01_epochs50_test_roc'.format(self.model_name, self.data_name)
+
+
+args = Arguments()
+
+
+################################################################################### 生成预测的配置文件
+def Create_data_dir_with_true_label(_root, save_name):
+    ''':cvar保存每一张图片的地址+对应的正确的标签'''
+    _list = []
+    for a, b, c in os.walk(_root):
+        for i in range(len(c)):
+            _list.append(os.path.join(a, c[i]))
+    # print(_list)
+    with open(save_name, 'w', encoding='UTF-8') as f:
+        for _img in _list:
+            f.write(_img + '\t' + str(_img.split('/')[-2]) + '\n')
+    print("生成文件成功：",save_name)
+
+def Create_data_dir_with_no_label(_root, save_name):
+    _list = []
+    for a, b, c in os.walk(_root):
+        for i in range(len(c)):
+            _list.append(os.path.join(a, c[i]))
+    # print(_list)
+    with open(save_name, 'w', encoding='UTF-8') as f:
+        for _img in _list:
+            f.write(_img + '\t' + "0" + '\n')
+    print("生成文件成功：",save_name)
+
+
+Create_data_dir_with_true_label(args.verify_root, args.true_label_txt)
+Create_data_dir_with_no_label(args.verify_root, args.predicted_label_txt)
+
+
+################################################################################## 模型预测并保存结果
+def define_model(flag):
+    if flag == 'CNN':
+        class CNN(nn.Module):
+            def __init__(self, num_class):
+                super(CNN, self).__init__()
+                self.block1 = nn.Sequential(
+                    nn.Conv2d(in_channels=3, out_channels=64, kernel_size=5),
+                    nn.ReLU(),
+                    nn.AdaptiveAvgPool2d(5),
+                    nn.Dropout(p=0.5)
+
+                )
+                self.block2 = nn.Sequential(
+                    nn.Conv2d(64, 32, 5, padding=1),
+                    nn.ReLU(),
+                    nn.MaxPool2d(2),
+                )
+                self.block3 = nn.Sequential(
+                    nn.Linear(32, num_class),
+                    nn.LogSoftmax(dim=1)
+                )
+
+            def forward(self, x):
+                x = self.block1(x)
+                x = self.block2(x)
+                x = x.view(x.shape[0], -1)  # torch.Size([128, 32])
+                x = self.block3(x)
+                return x
+        model = CNN(5)
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        print(f"Using {device} device")
+        model_loc = args.model_weight
+        model_dict = torch.load(model_loc)
+        model.load_state_dict(model_dict)
+        model = model.to(device)
+        return model
+    elif flag == 'vgg16':
+        from torchvision.models import vgg16  # VGG系列
+        model = vgg16(pretrained=False, num_classes=5)  # 导入了模型的框架
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        print(f"Using {device} device")
+        model_loc = args.model_weight
+        model_dict = torch.load(model_loc)
+        model.load_state_dict(model_dict)
+        model = model.to(device)
+
+        return model
+    elif flag == 'resnet18':
+        from torchvision.models import resnet18  # VGG系列
+        model = resnet18(pretrained=False, num_classes=5)  # 导入了模型的框架
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        print(f"Using {device} device")
+        model_loc = args.model_weight
+        model_dict = torch.load(model_loc)
+        model.load_state_dict(model_dict)
+        model = model.to(device)
+        return model
+    elif flag == 'alexnet':
+        from torchvision.models import alexnet  # VGG系列
+        model = alexnet(pretrained=False, num_classes=5)  # 导入了模型的框架
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        print(f"Using {device} device")
+        model_loc = args.model_weight
+        model_dict = torch.load(model_loc)
+        model.load_state_dict(model_dict)
+        model = model.to(device)
+        return model
+
+model = define_model(args.flag)
+print("现在预测的模型是：",args.flag)
+print("加载权重文件：",args.model_weight)
+
+
+def eval(dataloader, model):
+    label_list = []
+    likelihood_list = []
+    pred_list = []
+    model.eval()
+    with torch.no_grad():
+        # 加载数据加载器，得到里面的X（图片数据）和y(真实标签）
+        for idx, (X, y) in enumerate(dataloader):
+            # 将数据转到GPU
+            X = X.cuda()
+            # 将图片传入到模型当中就，得到预测的值pred
+            pred = model(X)
+            pred_softmax = torch.softmax(pred, 1).cpu().numpy()
+            # 获取可能性最大的标签
+            label = torch.softmax(pred, 1).cpu().numpy().argmax()
+            label_list.append(label)
+            # 获取可能性最大的值（即概率）
+            likelihood = torch.softmax(pred, 1).cpu().numpy().max()
+            likelihood_list.append(likelihood)
+            pred_list.append(pred_softmax.tolist()[0])
+
+        return label_list, likelihood_list, pred_list
+
+valid_data = LoadData(args.true_label_txt  , train_flag=False)
+_dataloader = DataLoader(dataset=valid_data, num_workers=4, pin_memory=True, batch_size=1)
+# for idx, (X, y) in enumerate(_dataloader):
+#     print(X,y)
+#     break
+label_list, likelihood_list, pred = eval(_dataloader, model)
+# print(label_list)
+# print(likelihood_list)
+# 将输出保存到exel中，方便后续分析
+label_names = ['R', 'RPM', 'gear', 'DoS', 'Fuzzy']
+df = pd.DataFrame(data=pred, columns=label_names)
+df.to_csv('../files/{}.csv'.format(args.save_name), encoding='utf-8', index=False)
+print('执行完毕，生成文件：../files/{}.csv'.format(args.save_name))
