@@ -167,6 +167,26 @@ https://mega.nz/folder/z0pnGA4a#WFEUISyS5_maabhcEI7HQA
 
 - [ ] 先把中期提到的这几个论文的实验先复现了
 
+## 参考文献
+
+### Deep Leakage from Gradients
+
+### See Through Gradients: Image Batch Recovery via GradInversion
+
+原文：https://openaccess.thecvf.com/content/CVPR2021/html/Yin_See_Through_Gradients_Image_Batch_Recovery_via_GradInversion_CVPR_2021_paper.html
+中文：https://blog.csdn.net/qq_34206952/article/details/116712207
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://github.com/lao1a0/Iov-with-FL/assets/46106062/02aa4078-7abe-4a26-b308-3da68b1192d3" width = "80%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">图：WAF的发展历程
+  	</div>
+</center>
+
 ## 三种防御：
 
 **PRECODE - A Generic Model Extension to Prevent Deep Gradient Leakage**
