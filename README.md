@@ -171,21 +171,58 @@ https://mega.nz/folder/z0pnGA4a#WFEUISyS5_maabhcEI7HQA
 
 ### Deep Leakage from Gradients
 
+形式上，给定一个机器学习模型$F()$及其权重$w$ ，如果我们有一对输入和标签的梯度$\delta w$，我们可以获得训练数据？传统观点认为答案是否定的，但我们证明这实际上是可能的。
+![image](https://github.com/lao1a0/Iov-with-FL/assets/46106062/57e5633c-13ff-4bf0-afb0-4ebfbcf95a0b)
+
 ### See Through Gradients: Image Batch Recovery via GradInversion
 
 原文：https://openaccess.thecvf.com/content/CVPR2021/html/Yin_See_Through_Gradients_Image_Batch_Recovery_via_GradInversion_CVPR_2021_paper.html
 中文：https://blog.csdn.net/qq_34206952/article/details/116712207
 
+**论文总结：**
+
+形式上，给定一个机器学习模型$F()$及其权重$w$ ，如果我们有一对输入和标签的梯度$∇ w$，我们可以获得训练数据？传统观点认为答案是否定的，但我们证明这实际上是可能的。
+
+在这项工作中，我们演示了来自梯度的深度泄漏（DLG）：共享梯度可能会泄漏私有训练数据。我们提出了一种优化算法，可以在几次迭代中获得训练输入和标签。为了执行攻击，
+1. 随机生成一对“虚拟”输入和标签，然后执行向前和向后传播。
+2. 从虚拟数据导出虚拟梯度之后，优化虚拟输入和标签，==最小化虚拟梯度和真实的梯度之间的距离==，而不是像典型训练中那样优化模型权重（如图2所示）。
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://github.com/lao1a0/Iov-with-FL/assets/46106062/02aa4078-7abe-4a26-b308-3da68b1192d3" width = "80%" alt=""/><br/>
+    src="https://github.com/lao1a0/Iov-with-FL/assets/46106062/57e5633c-13ff-4bf0-afb0-4ebfbcf95a0b" width = "80%" alt=""/><br/>
 	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 5px;">图：WAF的发展历程
+    padding: 5px;">图2：DLG算法的概述。要更新的变量用粗体边框标记。当正常参与者使用其私有训练数据计算 $∇ w$以更新参数时，恶意攻击者更新其虚拟输入和标签以最小化梯度距离。当优化完成时，恶意用户能够从诚实的参与者那里获得训练集
   	</div>
 </center>
+3. 匹配梯度使虚拟数据接近原始数据（图5）。
+4. 当优化完成时，私有训练数据（包括输入和标签）将完全显示。
+
+我们的“深度”泄漏是一个优化过程，==不依赖于任何生成模型==;因此，DLG不需要任何其他关于训练集的额外先验，相反，它可以从共享梯度中推断标签，并且DLG产生的结果（图像和文本）是确切的原始训练样本，而不是合成的相似替代品。
+
+深度泄漏对多节点机器学习系统提出了严峻的挑战。在集中式分布式训练中（图0（a）），通常不存储任何训练数据的参数服务器能够窃取所有参与者的本地训练数据。对于分散式分布式训练（图0（b）），情况变得更糟，因为任何参与者都可以窃取其邻居的私人训练数据。
+
+**防御策略：**
+
+为了防止深度泄漏，展示了三种防御策略：梯度扰动，低精度和梯度压缩。对于梯度扰动，发现尺度高于 $10^{-2}$的高斯和拉普拉斯噪声都是很好的防御。当==半精度攻击无法防御时，梯度压缩成功地防御了攻击，修剪后的梯度大于20%==。
+
+**算法详细介绍：**
+
+为了从梯度中恢复数据，我们首先随机初始化虚拟输入$𝐱′$和标签输入$𝐲′$ 。然后，我们将这些“虚拟数据”输入模型并获得“虚拟梯度”。
+
+$$
+\nabla W^{'}=\frac{\partial\ell(F(\mathbf{x}^{'},W),\mathbf{y}^{'})}{\partial W}
+$$
+
+优化接近原始的虚拟梯度也使虚拟数据接近真实的训练数据（图5中所示的趋势）。给定某一步的梯度，我们通过最小化以下目标来获得训练数据
+
+$$
+\mathbf{x'}^*,\mathbf{y'}^*=\underset{\overset{i}{\operatorname*{x'},y'}}{\operatorname*{\arg\min}}\|\nabla W^{'}-\nabla W\|^2=\underset{\overset{x',y'}{\operatorname*{x'},y'}}{\operatorname*{\arg\min}}\|\frac{\partial\ell(F(\mathbf{x'},W),\mathbf{y'})}{\partial W}-\nabla W\|^2
+$$
+
+距离$\left\|\nabla W^{'}-\nabla W\right\|^{2},$相对于伪输入$𝐱′$是可微的，并且标签$𝐲′$因此可以使用标准的基于梯度的方法来优化。注意，此优化需要 $2^{nd}$ 阶导数。我们做了一个温和的假设，即$F$是二次可微的，这适用于大多数现代机器学习模型（例如，大多数神经网络）和任务。
+
 
 ## 三种防御：
 
