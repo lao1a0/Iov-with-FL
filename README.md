@@ -171,14 +171,6 @@ https://mega.nz/folder/z0pnGA4a#WFEUISyS5_maabhcEI7HQA
 
 ### Deep Leakage from Gradients
 
-形式上，给定一个机器学习模型$F()$及其权重$w$ ，如果我们有一对输入和标签的梯度$\delta w$，我们可以获得训练数据？传统观点认为答案是否定的，但我们证明这实际上是可能的。
-![image](https://github.com/lao1a0/Iov-with-FL/assets/46106062/57e5633c-13ff-4bf0-afb0-4ebfbcf95a0b)
-
-### See Through Gradients: Image Batch Recovery via GradInversion
-
-原文：https://openaccess.thecvf.com/content/CVPR2021/html/Yin_See_Through_Gradients_Image_Batch_Recovery_via_GradInversion_CVPR_2021_paper.html
-中文：https://blog.csdn.net/qq_34206952/article/details/116712207
-
 **论文总结：**
 
 形式上，给定一个机器学习模型$F()$及其权重$w$ ，如果我们有一对输入和标签的梯度$∇ w$，我们可以获得训练数据？传统观点认为答案是否定的，但我们证明这实际上是可能的。
@@ -223,6 +215,11 @@ $$
 
 距离$\left\|\nabla W^{'}-\nabla W\right\|^{2},$相对于伪输入$𝐱′$是可微的，并且标签$𝐲′$因此可以使用标准的基于梯度的方法来优化。注意，此优化需要 $2^{nd}$ 阶导数。我们做了一个温和的假设，即$F$是二次可微的，这适用于大多数现代机器学习模型（例如，大多数神经网络）和任务。
 
+
+### See Through Gradients: Image Batch Recovery via GradInversion
+
+原文：https://openaccess.thecvf.com/content/CVPR2021/html/Yin_See_Through_Gradients_Image_Batch_Recovery_via_GradInversion_CVPR_2021_paper.html
+中文：https://blog.csdn.net/qq_34206952/article/details/116712207
 
 ## 三种防御：
 
