@@ -86,4 +86,5 @@ def test(model, device, federated_test_loader, batch_size):
 >
 > [负对数似然损失可以用于二分类或多分类问题，不同的是，二分类问题通常使用Sigmoid函数作为激活函数，多分类问题通常使用Softmax函数作为激活函数。](https://www.zhihu.com/question/582175900?write)[3](https://www.zhihu.com/question/582175900?write)
 >
-> <img src="https://github.com/lao1a0/Iov-with-FL/assets/46106062/ae191e27-aeeb-4684-951f-6b0eb4727b05" width="35%"/>
+
+<img src="https://github.com/lao1a0/Iov-with-FL/assets/46106062/ae191e27-aeeb-4684-951f-6b0eb4727b05" width="35%"/>
