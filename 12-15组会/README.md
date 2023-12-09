@@ -78,3 +78,12 @@ def test(model, device, federated_test_loader, batch_size):
         100. * correct / len(federated_test_loader) / batch_size))
 ```
 
+> [负对数自然损失的取值范围是负无穷到零。当预测的概率等于真实的类别的概率时，损失为零；当预测的概率越远离真实的类别的概率时，损失越大，趋向于负无穷](https://www.zhihu.com/question/300066479)
+>
+> [负对数似然损失（Negative Log Likelihood Loss）是一种常用的损失函数，通常用于分类任务中。它是针对输入的每个样本计算损失，是对分类问题中输出结果的一种概率分布表示。具体来说，对于每个样本，它预测的是一个类别的概率分布，并以该分布的对数似然值作为该样本的损失。换句话说，负对数似然损失计算的是预测的概率与真实的类别的对数似然值的负数。](https://zhuanlan.zhihu.com/p/659288660)[1](https://zhuanlan.zhihu.com/p/659288660)
+>
+> [负对数似然损失的目的是让预测的概率越接近真实的类别的概率，从而减小损失。它可以看作是最大似然估计的一种负对数形式，最大似然估计的本质思想是找到一个模型参数，使得模型产生观察到的数据的概率最大。](https://zhuanlan.zhihu.com/p/35709139)[2](https://zhuanlan.zhihu.com/p/35709139)
+>
+> [负对数似然损失可以用于二分类或多分类问题，不同的是，二分类问题通常使用Sigmoid函数作为激活函数，多分类问题通常使用Softmax函数作为激活函数。](https://www.zhihu.com/question/582175900?write)[3](https://www.zhihu.com/question/582175900?write)
+>
+> <img src="https://github.com/lao1a0/Iov-with-FL/assets/46106062/ae191e27-aeeb-4684-951f-6b0eb4727b05" width="35%"/>
