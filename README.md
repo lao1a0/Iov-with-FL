@@ -7,7 +7,8 @@
 - 密码：raoxy
 
 服务器2：
-
+- 59.65.191.29
+- 用户名：raoxy
 - 密码：raoxy@123
 
 ```python
@@ -79,6 +80,9 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna
 pip install syft==0.2.4 --no-dependencies
 pip install lz4~=3.0.2 msgpack~=1.0.0 phe~=1.4.0 scipy~=1.4.1 syft-proto~=0.2.5.a1 tblib~=1.6.0 websocket-client~=0.57.0 pip install websockets~=8.1.0 zstd~=1.4.4.0 Flask~=1.1.1 tornado==4.5.3 flask-socketio~=4.2.1 lz4~=3.0.2 Pillow~=6.2.2 pip install requests~=2.22.0 numpy~=1.18.1
 pip install protobuf==3.19.0
+
+# 使用GPU
+conda install cudatoolkit=11.0 -c pytorch
 
 # 验证安装
 python -c "import syft,torch"
@@ -154,6 +158,12 @@ raoxy@bjtucs-ubuntu:~$ conda install -c conda-forge jupyter_contrib_nbextensions
 
 [jupyter扩展插件Nbextensions的安装、使用](https://blog.csdn.net/zhongkeyuanchongqing/article/details/117560437)
 
+## 安装nbconvert
+
+```
+pip install nbconvert
+jupyter nbconvert --execute 数据预处理.ipynb --to html
+```
 ## 切换conda 虚拟环境
 
 ### 方法一:
