@@ -43,6 +43,8 @@ conda info --env
 
 ## 换源
 
+安装：https://blog.csdn.net/arno_an/article/details/105229780
+
 [Anaconda更换清华源、中科大源-CSDN博客](https://blog.csdn.net/OuDiShenmiss/article/details/106380852)
 
 ## 配置jupyter
