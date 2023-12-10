@@ -14661,12 +14661,28 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># </span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># transforms</span>
@@ -14779,7 +14795,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">LeNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
@@ -14829,7 +14845,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># class CNN(nn.Module):</span>
@@ -14884,7 +14900,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># class Arguments():</span>
@@ -14950,10 +14966,16 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">federated_train_loader</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">loss_train</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">acc_train</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">loss2</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">federated_train_loader</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">criterion</span>
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
    
     <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">federated_train_loader</span><span class="p">):</span> <span class="c1"># &lt;-- now it is a distributed dataset</span>
@@ -14961,7 +14983,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
         <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">long</span><span class="p">())</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">long</span><span class="p">())</span>
+<span class="c1">#         loss = F.cross_entropy(output, target.long())</span>
 <span class="c1">#         loss = F.nll_loss(output, target)</span>
         <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
@@ -14969,6 +14992,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         
         <span class="k">if</span> <span class="n">batch_idx</span> <span class="o">%</span> <span class="mi">2000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">loss</span> <span class="o">=</span> <span class="n">loss</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="c1"># &lt;-- NEW: get the loss</span>
+            <span class="c1"># loss_train.append(loss.item())</span>
+            <span class="c1"># acc_train.append()</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train Epoch: </span><span class="si">{}</span><span class="s1"> [</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1"> (</span><span class="si">{:.0f}</span><span class="s1">%)]</span><span class="se">\t</span><span class="s1">Loss: </span><span class="si">{:.6f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="n">epoch</span><span class="p">,</span> <span class="n">batch_idx</span> <span class="o">*</span> <span class="n">batch_size</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">federated_train_loader</span><span class="p">)</span> <span class="o">*</span> <span class="n">batch_size</span><span class="p">,</span>
                 <span class="mf">100.</span> <span class="o">*</span> <span class="n">batch_idx</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">federated_train_loader</span><span class="p">),</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
@@ -14984,10 +15009,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">federated_test_loader</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span> 
+    <span class="k">global</span> <span class="n">criterion</span>
     <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
     <span class="n">test_loss</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
@@ -14996,7 +15022,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             <span class="n">model</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">location</span><span class="p">)</span> <span class="c1"># &lt;-- NEW: send the model in virtual workers to Trusted Aggregator</span>
             <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
             <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-            <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">nll_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">long</span><span class="p">())</span>
+<span class="c1">#             loss = F.nll_loss(output, target, reduction=&#39;sum&#39;)</span>
             <span class="n">model</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
             <span class="n">test_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="c1"># sum up batch loss</span>
             <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># get the index of the max log-probability </span>
@@ -15019,7 +15046,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
@@ -15046,255 +15073,255 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Train Epoch: 0 [0/50000 (0%)]	Loss: 4.623055
-Train Epoch: 0 [40000/50000 (80%)]	Loss: 4.607547
+<pre>Train Epoch: 0 [0/50000 (0%)]	Loss: 4.708676
+Train Epoch: 0 [40000/50000 (80%)]	Loss: 4.590685
 
-Test set: Average loss: -0.0100, Accuracy: 100/10000 (1%)
+Test set: Average loss: 4.6056, Accuracy: 95/10000 (1%)
 
-Train Epoch: 1 [0/50000 (0%)]	Loss: 4.604061
-Train Epoch: 1 [40000/50000 (80%)]	Loss: 4.616826
+Train Epoch: 1 [0/50000 (0%)]	Loss: 4.604600
+Train Epoch: 1 [40000/50000 (80%)]	Loss: 4.602582
 
-Test set: Average loss: -0.0116, Accuracy: 98/10000 (1%)
+Test set: Average loss: 4.6052, Accuracy: 100/10000 (1%)
 
-Train Epoch: 2 [0/50000 (0%)]	Loss: 4.603156
-Train Epoch: 2 [40000/50000 (80%)]	Loss: 4.612471
+Train Epoch: 2 [0/50000 (0%)]	Loss: 4.596632
+Train Epoch: 2 [40000/50000 (80%)]	Loss: 4.611558
 
-Test set: Average loss: -0.0177, Accuracy: 100/10000 (1%)
+Test set: Average loss: 4.6049, Accuracy: 100/10000 (1%)
 
-Train Epoch: 3 [0/50000 (0%)]	Loss: 4.601818
-Train Epoch: 3 [40000/50000 (80%)]	Loss: 4.605659
+Train Epoch: 3 [0/50000 (0%)]	Loss: 4.617929
+Train Epoch: 3 [40000/50000 (80%)]	Loss: 4.607579
 
-Test set: Average loss: -0.0363, Accuracy: 100/10000 (1%)
+Test set: Average loss: 4.6039, Accuracy: 96/10000 (1%)
 
-Train Epoch: 4 [0/50000 (0%)]	Loss: 4.607818
-Train Epoch: 4 [40000/50000 (80%)]	Loss: 4.603370
+Train Epoch: 4 [0/50000 (0%)]	Loss: 4.605203
+Train Epoch: 4 [40000/50000 (80%)]	Loss: 4.605900
 
-Test set: Average loss: -0.1727, Accuracy: 201/10000 (2%)
+Test set: Average loss: 4.5987, Accuracy: 102/10000 (1%)
 
-Train Epoch: 5 [0/50000 (0%)]	Loss: 4.576836
-Train Epoch: 5 [40000/50000 (80%)]	Loss: 4.473662
+Train Epoch: 5 [0/50000 (0%)]	Loss: 4.589950
+Train Epoch: 5 [40000/50000 (80%)]	Loss: 4.492353
 
-Test set: Average loss: -6.1407, Accuracy: 395/10000 (4%)
+Test set: Average loss: 4.4701, Accuracy: 342/10000 (3%)
 
-Train Epoch: 6 [0/50000 (0%)]	Loss: 4.344894
-Train Epoch: 6 [40000/50000 (80%)]	Loss: 4.627690
+Train Epoch: 6 [0/50000 (0%)]	Loss: 4.495493
+Train Epoch: 6 [40000/50000 (80%)]	Loss: 3.969273
 
-Test set: Average loss: -16.6022, Accuracy: 627/10000 (6%)
+Test set: Average loss: 4.2379, Accuracy: 572/10000 (6%)
 
-Train Epoch: 7 [0/50000 (0%)]	Loss: 4.247001
-Train Epoch: 7 [40000/50000 (80%)]	Loss: 4.009862
+Train Epoch: 7 [0/50000 (0%)]	Loss: 4.229941
+Train Epoch: 7 [40000/50000 (80%)]	Loss: 4.037433
 
-Test set: Average loss: -24.7804, Accuracy: 868/10000 (9%)
+Test set: Average loss: 4.0686, Accuracy: 781/10000 (8%)
 
-Train Epoch: 8 [0/50000 (0%)]	Loss: 4.388611
-Train Epoch: 8 [40000/50000 (80%)]	Loss: 3.887657
+Train Epoch: 8 [0/50000 (0%)]	Loss: 4.223968
+Train Epoch: 8 [40000/50000 (80%)]	Loss: 4.097197
 
-Test set: Average loss: -30.1480, Accuracy: 1094/10000 (11%)
+Test set: Average loss: 3.9766, Accuracy: 988/10000 (10%)
 
-Train Epoch: 9 [0/50000 (0%)]	Loss: 4.024836
-Train Epoch: 9 [40000/50000 (80%)]	Loss: 3.893243
+Train Epoch: 9 [0/50000 (0%)]	Loss: 3.944783
+Train Epoch: 9 [40000/50000 (80%)]	Loss: 3.951657
 
-Test set: Average loss: -34.0648, Accuracy: 1216/10000 (12%)
+Test set: Average loss: 3.8865, Accuracy: 1147/10000 (11%)
 
-Train Epoch: 10 [0/50000 (0%)]	Loss: 3.789262
-Train Epoch: 10 [40000/50000 (80%)]	Loss: 4.032946
+Train Epoch: 10 [0/50000 (0%)]	Loss: 4.041358
+Train Epoch: 10 [40000/50000 (80%)]	Loss: 4.043406
 
-Test set: Average loss: -37.0698, Accuracy: 1321/10000 (13%)
+Test set: Average loss: 3.7876, Accuracy: 1301/10000 (13%)
 
-Train Epoch: 11 [0/50000 (0%)]	Loss: 3.779689
-Train Epoch: 11 [40000/50000 (80%)]	Loss: 3.138808
+Train Epoch: 11 [0/50000 (0%)]	Loss: 3.518500
+Train Epoch: 11 [40000/50000 (80%)]	Loss: 3.735777
 
-Test set: Average loss: -39.2434, Accuracy: 1504/10000 (15%)
+Test set: Average loss: 3.6846, Accuracy: 1469/10000 (15%)
 
-Train Epoch: 12 [0/50000 (0%)]	Loss: 3.519190
-Train Epoch: 12 [40000/50000 (80%)]	Loss: 2.623834
+Train Epoch: 12 [0/50000 (0%)]	Loss: 3.699314
+Train Epoch: 12 [40000/50000 (80%)]	Loss: 3.753798
 
-Test set: Average loss: -42.5390, Accuracy: 1597/10000 (16%)
+Test set: Average loss: 3.6119, Accuracy: 1626/10000 (16%)
 
-Train Epoch: 13 [0/50000 (0%)]	Loss: 3.544596
-Train Epoch: 13 [40000/50000 (80%)]	Loss: 3.574520
+Train Epoch: 13 [0/50000 (0%)]	Loss: 3.669033
+Train Epoch: 13 [40000/50000 (80%)]	Loss: 3.134054
 
-Test set: Average loss: -44.1080, Accuracy: 1670/10000 (17%)
+Test set: Average loss: 3.5677, Accuracy: 1732/10000 (17%)
 
-Train Epoch: 14 [0/50000 (0%)]	Loss: 3.650647
-Train Epoch: 14 [40000/50000 (80%)]	Loss: 3.781225
+Train Epoch: 14 [0/50000 (0%)]	Loss: 2.734629
+Train Epoch: 14 [40000/50000 (80%)]	Loss: 3.647416
 
-Test set: Average loss: -46.7418, Accuracy: 1793/10000 (18%)
+Test set: Average loss: 3.5019, Accuracy: 1819/10000 (18%)
 
-Train Epoch: 15 [0/50000 (0%)]	Loss: 3.381011
-Train Epoch: 15 [40000/50000 (80%)]	Loss: 3.238005
+Train Epoch: 15 [0/50000 (0%)]	Loss: 3.676202
+Train Epoch: 15 [40000/50000 (80%)]	Loss: 3.568512
 
-Test set: Average loss: -48.6133, Accuracy: 1872/10000 (19%)
+Test set: Average loss: 3.4599, Accuracy: 1882/10000 (19%)
 
-Train Epoch: 16 [0/50000 (0%)]	Loss: 3.368584
-Train Epoch: 16 [40000/50000 (80%)]	Loss: 3.039761
+Train Epoch: 16 [0/50000 (0%)]	Loss: 3.509736
+Train Epoch: 16 [40000/50000 (80%)]	Loss: 2.810602
 
-Test set: Average loss: -50.8849, Accuracy: 1933/10000 (19%)
+Test set: Average loss: 3.4225, Accuracy: 1972/10000 (20%)
 
-Train Epoch: 17 [0/50000 (0%)]	Loss: 3.652323
-Train Epoch: 17 [40000/50000 (80%)]	Loss: 3.141535
+Train Epoch: 17 [0/50000 (0%)]	Loss: 4.025714
+Train Epoch: 17 [40000/50000 (80%)]	Loss: 2.831839
 
-Test set: Average loss: -52.7754, Accuracy: 1969/10000 (20%)
+Test set: Average loss: 3.3644, Accuracy: 2077/10000 (21%)
 
-Train Epoch: 18 [0/50000 (0%)]	Loss: 3.075921
-Train Epoch: 18 [40000/50000 (80%)]	Loss: 3.502314
+Train Epoch: 18 [0/50000 (0%)]	Loss: 2.951268
+Train Epoch: 18 [40000/50000 (80%)]	Loss: 3.556488
 
-Test set: Average loss: -54.2733, Accuracy: 2099/10000 (21%)
+Test set: Average loss: 3.3326, Accuracy: 2135/10000 (21%)
 
-Train Epoch: 19 [0/50000 (0%)]	Loss: 3.228789
-Train Epoch: 19 [40000/50000 (80%)]	Loss: 3.232327
+Train Epoch: 19 [0/50000 (0%)]	Loss: 2.837605
+Train Epoch: 19 [40000/50000 (80%)]	Loss: 2.981775
 
-Test set: Average loss: -55.5484, Accuracy: 2104/10000 (21%)
+Test set: Average loss: 3.3058, Accuracy: 2175/10000 (22%)
 
-Train Epoch: 20 [0/50000 (0%)]	Loss: 3.397372
-Train Epoch: 20 [40000/50000 (80%)]	Loss: 2.992939
+Train Epoch: 20 [0/50000 (0%)]	Loss: 3.772324
+Train Epoch: 20 [40000/50000 (80%)]	Loss: 3.295967
 
-Test set: Average loss: -57.5338, Accuracy: 2111/10000 (21%)
+Test set: Average loss: 3.3042, Accuracy: 2178/10000 (22%)
 
-Train Epoch: 21 [0/50000 (0%)]	Loss: 3.014660
-Train Epoch: 21 [40000/50000 (80%)]	Loss: 3.534322
+Train Epoch: 21 [0/50000 (0%)]	Loss: 3.686811
+Train Epoch: 21 [40000/50000 (80%)]	Loss: 2.765081
 
-Test set: Average loss: -58.8510, Accuracy: 2219/10000 (22%)
+Test set: Average loss: 3.2492, Accuracy: 2291/10000 (23%)
 
-Train Epoch: 22 [0/50000 (0%)]	Loss: 3.204035
-Train Epoch: 22 [40000/50000 (80%)]	Loss: 3.538544
+Train Epoch: 22 [0/50000 (0%)]	Loss: 3.459053
+Train Epoch: 22 [40000/50000 (80%)]	Loss: 2.574803
 
-Test set: Average loss: -61.0836, Accuracy: 2255/10000 (23%)
+Test set: Average loss: 3.2196, Accuracy: 2356/10000 (24%)
 
-Train Epoch: 23 [0/50000 (0%)]	Loss: 3.613021
-Train Epoch: 23 [40000/50000 (80%)]	Loss: 2.739760
+Train Epoch: 23 [0/50000 (0%)]	Loss: 3.288209
+Train Epoch: 23 [40000/50000 (80%)]	Loss: 2.942970
 
-Test set: Average loss: -61.1325, Accuracy: 2278/10000 (23%)
+Test set: Average loss: 3.1960, Accuracy: 2394/10000 (24%)
 
-Train Epoch: 24 [0/50000 (0%)]	Loss: 2.621934
-Train Epoch: 24 [40000/50000 (80%)]	Loss: 2.103153
+Train Epoch: 24 [0/50000 (0%)]	Loss: 3.508090
+Train Epoch: 24 [40000/50000 (80%)]	Loss: 2.875761
 
-Test set: Average loss: -63.1516, Accuracy: 2351/10000 (24%)
+Test set: Average loss: 3.1837, Accuracy: 2442/10000 (24%)
 
-Train Epoch: 25 [0/50000 (0%)]	Loss: 3.173107
-Train Epoch: 25 [40000/50000 (80%)]	Loss: 2.619443
+Train Epoch: 25 [0/50000 (0%)]	Loss: 3.097573
+Train Epoch: 25 [40000/50000 (80%)]	Loss: 2.783886
 
-Test set: Average loss: -63.8384, Accuracy: 2380/10000 (24%)
+Test set: Average loss: 3.1584, Accuracy: 2482/10000 (25%)
 
-Train Epoch: 26 [0/50000 (0%)]	Loss: 2.988253
-Train Epoch: 26 [40000/50000 (80%)]	Loss: 2.844622
+Train Epoch: 26 [0/50000 (0%)]	Loss: 3.077751
+Train Epoch: 26 [40000/50000 (80%)]	Loss: 2.863167
 
-Test set: Average loss: -65.2973, Accuracy: 2440/10000 (24%)
+Test set: Average loss: 3.1382, Accuracy: 2532/10000 (25%)
 
-Train Epoch: 27 [0/50000 (0%)]	Loss: 2.906253
-Train Epoch: 27 [40000/50000 (80%)]	Loss: 2.678006
+Train Epoch: 27 [0/50000 (0%)]	Loss: 3.157701
+Train Epoch: 27 [40000/50000 (80%)]	Loss: 3.405468
 
-Test set: Average loss: -66.7674, Accuracy: 2429/10000 (24%)
+Test set: Average loss: 3.1314, Accuracy: 2521/10000 (25%)
 
-Train Epoch: 28 [0/50000 (0%)]	Loss: 3.563842
-Train Epoch: 28 [40000/50000 (80%)]	Loss: 2.697618
+Train Epoch: 28 [0/50000 (0%)]	Loss: 3.381003
+Train Epoch: 28 [40000/50000 (80%)]	Loss: 2.636311
 
-Test set: Average loss: -68.5595, Accuracy: 2519/10000 (25%)
+Test set: Average loss: 3.1026, Accuracy: 2578/10000 (26%)
 
-Train Epoch: 29 [0/50000 (0%)]	Loss: 3.271902
-Train Epoch: 29 [40000/50000 (80%)]	Loss: 3.235344
+Train Epoch: 29 [0/50000 (0%)]	Loss: 2.735946
+Train Epoch: 29 [40000/50000 (80%)]	Loss: 2.728709
 
-Test set: Average loss: -69.1027, Accuracy: 2525/10000 (25%)
+Test set: Average loss: 3.0930, Accuracy: 2573/10000 (26%)
 
-Train Epoch: 30 [0/50000 (0%)]	Loss: 3.070391
-Train Epoch: 30 [40000/50000 (80%)]	Loss: 2.946528
+Train Epoch: 30 [0/50000 (0%)]	Loss: 3.060843
+Train Epoch: 30 [40000/50000 (80%)]	Loss: 2.819065
 
-Test set: Average loss: -69.9258, Accuracy: 2551/10000 (26%)
+Test set: Average loss: 3.0722, Accuracy: 2642/10000 (26%)
 
-Train Epoch: 31 [0/50000 (0%)]	Loss: 3.072035
-Train Epoch: 31 [40000/50000 (80%)]	Loss: 2.501042
+Train Epoch: 31 [0/50000 (0%)]	Loss: 2.701449
+Train Epoch: 31 [40000/50000 (80%)]	Loss: 2.802288
 
-Test set: Average loss: -70.7078, Accuracy: 2571/10000 (26%)
+Test set: Average loss: 3.0580, Accuracy: 2698/10000 (27%)
 
-Train Epoch: 32 [0/50000 (0%)]	Loss: 2.659743
-Train Epoch: 32 [40000/50000 (80%)]	Loss: 3.233782
+Train Epoch: 32 [0/50000 (0%)]	Loss: 2.812822
+Train Epoch: 32 [40000/50000 (80%)]	Loss: 2.769371
 
-Test set: Average loss: -72.1579, Accuracy: 2570/10000 (26%)
+Test set: Average loss: 3.0651, Accuracy: 2667/10000 (27%)
 
-Train Epoch: 33 [0/50000 (0%)]	Loss: 2.455949
-Train Epoch: 33 [40000/50000 (80%)]	Loss: 2.688953
+Train Epoch: 33 [0/50000 (0%)]	Loss: 2.965749
+Train Epoch: 33 [40000/50000 (80%)]	Loss: 2.678886
 
-Test set: Average loss: -72.4784, Accuracy: 2640/10000 (26%)
+Test set: Average loss: 3.0527, Accuracy: 2725/10000 (27%)
 
-Train Epoch: 34 [0/50000 (0%)]	Loss: 2.563363
-Train Epoch: 34 [40000/50000 (80%)]	Loss: 3.815917
+Train Epoch: 34 [0/50000 (0%)]	Loss: 2.349275
+Train Epoch: 34 [40000/50000 (80%)]	Loss: 3.397193
 
-Test set: Average loss: -72.5463, Accuracy: 2624/10000 (26%)
+Test set: Average loss: 3.0369, Accuracy: 2759/10000 (28%)
 
-Train Epoch: 35 [0/50000 (0%)]	Loss: 3.534257
-Train Epoch: 35 [40000/50000 (80%)]	Loss: 3.054834
+Train Epoch: 35 [0/50000 (0%)]	Loss: 2.528225
+Train Epoch: 35 [40000/50000 (80%)]	Loss: 2.322527
 
-Test set: Average loss: -73.9145, Accuracy: 2609/10000 (26%)
+Test set: Average loss: 3.0389, Accuracy: 2731/10000 (27%)
 
-Train Epoch: 36 [0/50000 (0%)]	Loss: 2.010687
-Train Epoch: 36 [40000/50000 (80%)]	Loss: 2.937808
+Train Epoch: 36 [0/50000 (0%)]	Loss: 2.765345
+Train Epoch: 36 [40000/50000 (80%)]	Loss: 2.300882
 
-Test set: Average loss: -74.8794, Accuracy: 2676/10000 (27%)
+Test set: Average loss: 3.0304, Accuracy: 2732/10000 (27%)
 
-Train Epoch: 37 [0/50000 (0%)]	Loss: 2.418874
-Train Epoch: 37 [40000/50000 (80%)]	Loss: 2.635889
+Train Epoch: 37 [0/50000 (0%)]	Loss: 2.536705
+Train Epoch: 37 [40000/50000 (80%)]	Loss: 2.632447
 
-Test set: Average loss: -75.8724, Accuracy: 2638/10000 (26%)
+Test set: Average loss: 3.0170, Accuracy: 2782/10000 (28%)
 
-Train Epoch: 38 [0/50000 (0%)]	Loss: 2.521391
-Train Epoch: 38 [40000/50000 (80%)]	Loss: 2.378543
+Train Epoch: 38 [0/50000 (0%)]	Loss: 2.408066
+Train Epoch: 38 [40000/50000 (80%)]	Loss: 2.649137
 
-Test set: Average loss: -76.6376, Accuracy: 2680/10000 (27%)
+Test set: Average loss: 3.0178, Accuracy: 2783/10000 (28%)
 
-Train Epoch: 39 [0/50000 (0%)]	Loss: 2.348515
-Train Epoch: 39 [40000/50000 (80%)]	Loss: 3.128301
+Train Epoch: 39 [0/50000 (0%)]	Loss: 2.461593
+Train Epoch: 39 [40000/50000 (80%)]	Loss: 2.682473
 
-Test set: Average loss: -76.8854, Accuracy: 2699/10000 (27%)
+Test set: Average loss: 3.0040, Accuracy: 2799/10000 (28%)
 
-Train Epoch: 40 [0/50000 (0%)]	Loss: 2.771832
-Train Epoch: 40 [40000/50000 (80%)]	Loss: 2.725082
+Train Epoch: 40 [0/50000 (0%)]	Loss: 2.265219
+Train Epoch: 40 [40000/50000 (80%)]	Loss: 2.050575
 
-Test set: Average loss: -77.7303, Accuracy: 2689/10000 (27%)
+Test set: Average loss: 2.9966, Accuracy: 2801/10000 (28%)
 
-Train Epoch: 41 [0/50000 (0%)]	Loss: 2.891736
-Train Epoch: 41 [40000/50000 (80%)]	Loss: 2.279144
+Train Epoch: 41 [0/50000 (0%)]	Loss: 2.827886
+Train Epoch: 41 [40000/50000 (80%)]	Loss: 2.499863
 
-Test set: Average loss: -78.5619, Accuracy: 2722/10000 (27%)
+Test set: Average loss: 2.9927, Accuracy: 2827/10000 (28%)
 
-Train Epoch: 42 [0/50000 (0%)]	Loss: 2.941139
-Train Epoch: 42 [40000/50000 (80%)]	Loss: 2.890439
+Train Epoch: 42 [0/50000 (0%)]	Loss: 2.893034
+Train Epoch: 42 [40000/50000 (80%)]	Loss: 2.854383
 
-Test set: Average loss: -79.5498, Accuracy: 2728/10000 (27%)
+Test set: Average loss: 2.9855, Accuracy: 2853/10000 (29%)
 
-Train Epoch: 43 [0/50000 (0%)]	Loss: 2.683351
-Train Epoch: 43 [40000/50000 (80%)]	Loss: 2.901093
+Train Epoch: 43 [0/50000 (0%)]	Loss: 3.673101
+Train Epoch: 43 [40000/50000 (80%)]	Loss: 2.847880
 
-Test set: Average loss: -80.5022, Accuracy: 2745/10000 (27%)
+Test set: Average loss: 3.0089, Accuracy: 2800/10000 (28%)
 
-Train Epoch: 44 [0/50000 (0%)]	Loss: 2.311525
-Train Epoch: 44 [40000/50000 (80%)]	Loss: 2.610348
+Train Epoch: 44 [0/50000 (0%)]	Loss: 2.480524
+Train Epoch: 44 [40000/50000 (80%)]	Loss: 2.260675
 
-Test set: Average loss: -80.8068, Accuracy: 2733/10000 (27%)
+Test set: Average loss: 2.9796, Accuracy: 2852/10000 (29%)
 
-Train Epoch: 45 [0/50000 (0%)]	Loss: 2.861716
-Train Epoch: 45 [40000/50000 (80%)]	Loss: 2.294612
+Train Epoch: 45 [0/50000 (0%)]	Loss: 3.029518
+Train Epoch: 45 [40000/50000 (80%)]	Loss: 3.397951
 
-Test set: Average loss: -80.3317, Accuracy: 2708/10000 (27%)
+Test set: Average loss: 2.9897, Accuracy: 2827/10000 (28%)
 
-Train Epoch: 46 [0/50000 (0%)]	Loss: 2.916368
-Train Epoch: 46 [40000/50000 (80%)]	Loss: 2.294786
+Train Epoch: 46 [0/50000 (0%)]	Loss: 2.133708
+Train Epoch: 46 [40000/50000 (80%)]	Loss: 2.689017
 
-Test set: Average loss: -81.6341, Accuracy: 2771/10000 (28%)
+Test set: Average loss: 2.9726, Accuracy: 2873/10000 (29%)
 
-Train Epoch: 47 [0/50000 (0%)]	Loss: 2.931817
-Train Epoch: 47 [40000/50000 (80%)]	Loss: 2.942230
+Train Epoch: 47 [0/50000 (0%)]	Loss: 2.948929
+Train Epoch: 47 [40000/50000 (80%)]	Loss: 2.023050
 
-Test set: Average loss: -81.8427, Accuracy: 2782/10000 (28%)
+Test set: Average loss: 2.9661, Accuracy: 2903/10000 (29%)
 
-Train Epoch: 48 [0/50000 (0%)]	Loss: 2.302592
-Train Epoch: 48 [40000/50000 (80%)]	Loss: 2.843212
+Train Epoch: 48 [0/50000 (0%)]	Loss: 2.379103
+Train Epoch: 48 [40000/50000 (80%)]	Loss: 2.243538
 
-Test set: Average loss: -82.2258, Accuracy: 2746/10000 (27%)
+Test set: Average loss: 2.9785, Accuracy: 2904/10000 (29%)
 
-Train Epoch: 49 [0/50000 (0%)]	Loss: 2.846155
-Train Epoch: 49 [40000/50000 (80%)]	Loss: 3.279741
+Train Epoch: 49 [0/50000 (0%)]	Loss: 2.108592
+Train Epoch: 49 [40000/50000 (80%)]	Loss: 2.367362
 
-Test set: Average loss: -83.7788, Accuracy: 2768/10000 (28%)
+Test set: Average loss: 2.9703, Accuracy: 2857/10000 (29%)
 
 </pre>
 </div>
@@ -15320,7 +15347,7 @@ Test set: Average loss: -83.7788, Accuracy: 2768/10000 (28%)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">save_name</span><span class="o">=</span><span class="s1">&#39;LeNet&#39;</span>
@@ -15336,7 +15363,7 @@ Test set: Average loss: -83.7788, Accuracy: 2768/10000 (28%)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 保存模型的权重</span>
@@ -15377,7 +15404,7 @@ Test set: Average loss: -83.7788, Accuracy: 2768/10000 (28%)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 保存整个模型</span>
@@ -15424,6 +15451,96 @@ Test set: Average loss: -83.7788, Accuracy: 2768/10000 (28%)
 
 </div>
 
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="%E5%88%86%E6%9E%90">&#20998;&#26512;<a class="anchor-link" href="#%E5%88%86%E6%9E%90">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">txt</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># for i in txt.split(&#39;\n&#39;):</span>
+<span class="c1">#      if len(i)&gt;0:</span>
+<span class="c1">#         if &#39;40000/50000 &#39; in i:</span>
+<span class="c1">#             loss.append(float(i.split()[-1].strip()))</span>
+<span class="c1">#         if &#39;Test&#39; in i:</span>
+<span class="c1">#             loss2.append(float(i.split()[4].strip().replace(&quot;,&quot;, &quot;&quot;)))</span>
+<span class="c1">#             acc.append(float(i.split()[-2].split(&#39;/&#39;)[0])/10000)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import matplotlib as mpl</span>
+<span class="c1"># from matplotlib import pyplot as plt</span>
+
+<span class="c1"># mpl.use(&#39;nbAgg&#39;)</span>
+<span class="c1"># mpl.style.use(&#39;seaborn-darkgrid&#39;)</span>
+<span class="c1"># import numpy as np</span>
+<span class="c1"># def plotP(test_loss, train_loss, train_acc_list, test_acc_list):</span>
+<span class="c1">#     plt.figure(figsize=(6, 8))</span>
+<span class="c1">#     x = np.linspace(0,  len(train_loss))</span>
+<span class="c1">#     y = np.linspace(0, len(test_acc_list))</span>
+<span class="c1">#     plt.subplot(2, 1, 1)</span>
+<span class="c1">#     plt.plot(x, train_loss, label=&quot;train_loss&quot;)</span>
+<span class="c1">#     plt.plot(x, test_loss, label=&quot;test_loss&quot;)</span>
+<span class="c1">#</span>
+<span class="c1">#     plt.xlabel(&quot;epoch&quot;)</span>
+<span class="c1">#     plt.ylabel(&quot;loss&quot;)</span>
+<span class="c1">#     plt.legend()</span>
+<span class="c1">#     plt.subplot(2, 1, 2)</span>
+<span class="c1">#     plt.plot(y, test_acc_list, label=&quot;test_acc&quot;)</span>
+<span class="c1">#     plt.xlabel(&quot;epoch&quot;)</span>
+<span class="c1">#     plt.ylabel(&quot;acc&quot;)</span>
+<span class="c1">#     plt.legend()</span>
+<span class="c1">#     plt.show()</span>
+<span class="c1">#</span>
+<span class="c1"># plotP(loss2, loss, [], acc)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
 </div>
