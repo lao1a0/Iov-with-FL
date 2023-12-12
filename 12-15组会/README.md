@@ -119,8 +119,6 @@ def test(model, device, federated_test_loader, batch_size):
 > - **调整学习率**：您的学习率设置为0.03，可能过大导致模型无法收敛到最优解，您可以尝试使用较小的学习率或者使用学习率衰减策略。
 > - **增加数据增强**：您的数据增强只包含了ToTensor和Normalize，可能不足以提高模型的鲁棒性，您可以尝试使用更多的数据增强方法，如随机旋转，随机裁剪，随机翻转等。
 > - **使用正则化**：您的模型没有使用任何正则化方法，可能导致模型过于复杂而过拟合，您可以尝试使用L2正则化，Dropout，BatchNorm等方法来防止过拟合。
->
-> 
 
 以下是不使用FL直接进行分类的结果：
 
@@ -140,13 +138,19 @@ def test(model, device, federated_test_loader, batch_size):
 
 
 
-## 复现Fed+cifar的算法
+## 验证是否是激活函数的原因
+
+
+
+
+
+# 复现Fed+cifar的算法
 
 ### FedSAM
 
 [debcaldarola/fedsam](https://github.com/debcaldarola/fedsam?utm_source=catalyzex.com)、[Improving Generalization in Federated Learning by Seeking Flat Minima | Papers With Code ](https://paperswithcode.com/paper/improving-generalization-in-federated)
 
-> FedSAM是一种联邦学习算法，用于解决在联邦学习中数据分布不平衡的问题。基于Sharpness Aware Minimization（SAM）本地优化器。FedSAM的第一个模块是直接先验分析器（DPA），用于==估计全局数据的长尾统计信息==，而不需要暴露客户端的私有数据。FedSAM的第二个模块是自适应梯度平衡器（SGB），用于在每个客户端进行局部训练时，根据DPA得到的全局长尾特征，对正负梯度进行类别级别的重新加权。SGB采用了一个基于比例-积分-微分控制器的闭环和自适应机制，不断调整梯度的加权系数，使得每个类别的累积正负梯度之差趋于一个预定的平衡目标。FedSAM在多个长尾分类的基准数据集上进行了广泛的实验，包括CIFAR-10-LT, CIFAR-100-LT, ImageNet-LT和iNaturalist。实验结果表明，FedSAM在不同的不平衡和异构数据设置下，都能超越现有的联邦优化和长尾学习的方法，特别是在尾部类别上取得了显著的性能提升
+> FedSAM是一种联邦学习算法，用于解决在联邦学习中数据分布不平衡的问题。基于Sharpness Aware Minimization（SAM）本地优化器。FedSAM的第一个模块是直接先验分析器（DPA），用于==估计全局数据的长尾统计信息==，而不需要暴露客户端的私有数据。FedSAM的第二个模块是自适应梯度平衡器（SGB），用于在每个客户端进行局部训练时，根据DPA得到的全局长尾特征，对正负梯度进行类别级别的重新加权。SGB采用了一个基于比例-积分-微分控制器的闭环和自适应机制，不断调整梯度的加权系数，使得每个类别的累积正负梯度之差趋于一个预定的平衡目标。FedSAM在多个长尾分类的基准数据集上进行了广泛的实验，包括CIFAR-10-LT, CIFAR-100-LT, ImageNet-LT和iNaturalist。实验结果表明，FedSAM在不同的不平衡和异构数据设置下，都能超越现有的联邦优化和长尾学习的方法，特别是在尾部类别上取得了显著的性能提升waz
 >
 
 > [长尾分布](https://so.csdn.net/so/search?q=长尾分布&spm=1001.2101.3001.7020)，指的是一小部分标签（即头部标签）有很多数据实例，而大多数标签（即尾部标签）只有很少数据实例的不平衡分类情况。
@@ -155,3 +159,19 @@ def test(model, device, federated_test_loader, batch_size):
 > **长尾**（英语：The Long Tail），或译**长尾效应**，是指那些原来不受到重视的销量小但种类多的产品或服务由于总量巨大，累积起来的总收益超过主流产品的现象。
 >
 > <img src="./img/image-20231210203955133.png" alt="image-20231210203955133" style="zoom: 33%;" />
+
+#### 安装过程：
+
+```python
+# curl http:\/\/10.10.43.3\/drcom\/login\?callback=dr1558050177253\&DDDDD=22125303\&upass=Xrq@9686\&0MKKey=123456\&R1=0\&R3=0\&R6=0\&para=00\&v6ip=\&\_=1558050050455
+
+conda env create -f environment.yml # conda remov -n [] --all
+# 创建数据集
+conda activate torch10 && cd data
+chmod +x setup_datasets.sh && ./setup_datasets.sh
+# 运行实验环境
+cd paper_experiments
+chmod +x cifar10.sh && ./cifar10.sh
+
+```
+
