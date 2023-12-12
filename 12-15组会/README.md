@@ -88,19 +88,19 @@ def test(model, device, federated_test_loader, batch_size):
 
 二次实验结果，设定惩罚函数都一样
 
-<img src="./img/image-20231210204909941-1702212556367-3.png" alt="image-20231210204909941" style="zoom: 50%;" />
+<img src="./img/image-20231210204909941-1702212556367-3.png" alt="image-20231210204909941" style="zoom: 33%;" />
 
 方向是对了，但是50轮了，识别精度都很低
 
-<img src="./img/image-20231210205419530-1702212864652-5.png" alt="image-20231210205419530" style="zoom:50%;" />
+<img src="./img/image-20231210205419530-1702212864652-5.png" alt="image-20231210205419530" style="zoom:33%;" />
 
 考虑倒是不是fl的原因。不用fl直接训练，结果如下，证明确实是模型不行
 
-<img src="./img/image-20231210215835666.png" alt="image-20231210215835666" style="zoom:50%;" />
+<img src="./img/image-20231210215835666.png" alt="image-20231210215835666" style="zoom: 33%;" />
 
 在[CIFAR-100 Benchmark (Image Classification) | Papers With Code](https://paperswithcode.com/sota/image-classification-on-cifar-100)中寻找基准模型，选择的是Percentage correct 96%的`effnet-l2`
 
-<img src="./img/image-20231210221520018.png" alt="image-20231210221520018" style="zoom:50%;" />
+<img src="./img/image-20231210221520018.png" alt="image-20231210221520018" style="zoom: 33%;" />
 
 > 在机器学习中，Percentage correct和Accuracy都是用于评估分类模型性能的指标之一。Accuracy代表模型预测正确的样本数与总样本数之比。Percentage correct代表模型预测正确的样本数与总样本数之比。两者的区别在于，Accuracy是在二元分类问题中使用的指标，而Percentage correct可以用于多类分类问题。如果您需要更多信息，请告诉我
 
@@ -108,7 +108,7 @@ def test(model, device, federated_test_loader, batch_size):
 
 以下是使用FL分类的结果：
 
-<img src="./img/image-20231211201453555.png" alt="image-20231211201453555" style="zoom:50%;" />
+<img src="./img/image-20231211201453555.png" alt="image-20231211201453555" style="zoom: 33%;" />
 
 > - **训练损失**：从4.63降低到0.10，表明模型在训练集上的拟合能力逐渐提高。
 > - **测试损失**：从2.58升高到4.14，表明模型在测试集上的泛化能力不足，==出现了过拟合现象==。
@@ -122,7 +122,7 @@ def test(model, device, federated_test_loader, batch_size):
 
 以下是不使用FL直接进行分类的结果：
 
-<img src="./img/image-20231211195325648.png" alt="image-20231211195325648" style="zoom:50%;" />
+<img src="./img/image-20231211195325648.png" alt="image-20231211195325648" style="zoom: 33%;" />
 
 > - 模型在训练集上的损失（loss）逐渐下降，但在测试集上的损失（loss）波动较大，甚至有上升的趋势。这说明模型可能存在**过拟合**（overfitting）的问题，即模型对训练数据过度拟合，而对测试数据的泛化能力不足。
 >
@@ -146,7 +146,7 @@ def test(model, device, federated_test_loader, batch_size):
 
 # 复现Fed+cifar的算法
 
-### FedSAM
+## FedSAM
 
 [debcaldarola/fedsam](https://github.com/debcaldarola/fedsam?utm_source=catalyzex.com)、[Improving Generalization in Federated Learning by Seeking Flat Minima | Papers With Code ](https://paperswithcode.com/paper/improving-generalization-in-federated)
 
@@ -160,7 +160,7 @@ def test(model, device, federated_test_loader, batch_size):
 >
 > <img src="./img/image-20231210203955133.png" alt="image-20231210203955133" style="zoom: 33%;" />
 
-#### 安装过程：
+### 安装过程：
 
 ```python
 # curl http:\/\/10.10.43.3\/drcom\/login\?callback=dr1558050177253\&DDDDD=22125303\&upass=Xrq@9686\&0MKKey=123456\&R1=0\&R3=0\&R6=0\&para=00\&v6ip=\&\_=1558050050455
