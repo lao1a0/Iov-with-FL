@@ -43,4 +43,7 @@ def main():
     send_email()
 
 if __name__ == '__main__':
+    import torch.nn as nn
+    
+
     main()

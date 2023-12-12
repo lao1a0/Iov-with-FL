@@ -43,13 +43,31 @@ class Net(nn.Module):
 
 运行结果如下所示
 
-<img src='./img/2.png' width="35%"/>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/2.png" width = "35%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">
+  	</div>
+</center>
 
 ### LeNet-CIFAR100
 
 运行文件[fl_CIFAR100_LeNet](https://github.com/lao1a0/Iov-with-FL/blob/main/12-15组会/fl_CIFAR100_LeNet.ipynb)，模型是[ID LG ](https://colab.research.google.com/drive/1K6P2FD9XimFo5AeU0Iws4FOtZkkgzPy7)攻击的目标模型。因为这个模型用的数据集也是`CIFAR-100`，所以先看一下在联邦学习中模型精度如何，运行结果如下：`jupyter nbconvert --to html --execute fl_CIFAR100_LeNet.ipynb`
 
-<img src='./img/1.png' width="35%"/>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/1.png" width = "35%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">
+  	</div>
+</center>
 
 这里test_loss朝着负数方向增大是因为使用的是负对数损失`F.nll_loss`
 
@@ -88,19 +106,55 @@ def test(model, device, federated_test_loader, batch_size):
 
 二次实验结果，设定惩罚函数都一样
 
-<img src="./img/image-20231210204909941-1702212556367-3.png" alt="image-20231210204909941" style="zoom: 33%;" />
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231210204909941-1702212556367-3.png" width = "55%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">
+  	</div>
+</center>
 
 方向是对了，但是50轮了，识别精度都很低
 
-<img src="./img/image-20231210205419530-1702212864652-5.png" alt="image-20231210205419530" style="zoom:33%;" />
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231210205419530-1702212864652-5.png" width = "35%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">
+  	</div>
+</center>
 
-考虑倒是不是fl的原因。不用fl直接训练，结果如下，证明确实是模型不行
+考虑是不是fl的原因。不用fl直接训练，结果如下，证明确实是模型不行
 
-<img src="./img/image-20231210215835666.png" alt="image-20231210215835666" style="zoom: 33%;" />
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231210215835666.png" width = "35%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">不使用FL直接进行分类
+  	</div>
+</center>
 
 在[CIFAR-100 Benchmark (Image Classification) | Papers With Code](https://paperswithcode.com/sota/image-classification-on-cifar-100)中寻找基准模型，选择的是Percentage correct 96%的`effnet-l2`
 
-<img src="./img/image-20231210221520018.png" alt="image-20231210221520018" style="zoom: 33%;" />
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231210221520018.png" width = "65%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">不使用FL直接进行分类
+  	</div>
+</center>
 
 > 在机器学习中，Percentage correct和Accuracy都是用于评估分类模型性能的指标之一。Accuracy代表模型预测正确的样本数与总样本数之比。Percentage correct代表模型预测正确的样本数与总样本数之比。两者的区别在于，Accuracy是在二元分类问题中使用的指标，而Percentage correct可以用于多类分类问题。如果您需要更多信息，请告诉我
 
@@ -108,7 +162,16 @@ def test(model, device, federated_test_loader, batch_size):
 
 以下是使用FL分类的结果：
 
-<img src="./img/image-20231211201453555.png" alt="image-20231211201453555" style="zoom: 33%;" />
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231211201453555.png" width = "35%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">不使用FL直接进行分类
+  	</div>
+</center>
 
 > - **训练损失**：从4.63降低到0.10，表明模型在训练集上的拟合能力逐渐提高。
 > - **测试损失**：从2.58升高到4.14，表明模型在测试集上的泛化能力不足，==出现了过拟合现象==。
@@ -122,7 +185,16 @@ def test(model, device, federated_test_loader, batch_size):
 
 以下是不使用FL直接进行分类的结果：
 
-<img src="./img/image-20231211195325648.png" alt="image-20231211195325648" style="zoom: 33%;" />
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231211195325648.png" width = "35%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">不使用FL直接进行分类
+  	</div>
+</center>
 
 > - 模型在训练集上的损失（loss）逐渐下降，但在测试集上的损失（loss）波动较大，甚至有上升的趋势。这说明模型可能存在**过拟合**（overfitting）的问题，即模型对训练数据过度拟合，而对测试数据的泛化能力不足。
 >
@@ -138,7 +210,90 @@ def test(model, device, federated_test_loader, batch_size):
 
 
 
+# 研究点二
+
 ## 验证是否是激活函数的原因
+
+### ReLU
+
+原来的模型不变，改变激活函数为`ReLU`，DLG攻击结果如下
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/img.png" width = "85%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">DLG攻击
+  	</div>
+</center>
+IDLG攻击的结果如下：
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231212192431775.png" width = "85%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">iDLG攻击
+  	</div>
+</center>
+
+具体的可以见这里：[Iov-with-FL/12-15组会/ID_LG_ReLU.ipynb at main · lao1a0/Iov-with-FL (github.com)](https://github.com/lao1a0/Iov-with-FL/blob/main/12-15组会/ID_LG_ReLU.ipynb)
+
+### SoftMax
+
+使用Softmax函数进行激活，DLG攻击结果如下：
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231212192943419.png" width = "85%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">iDLG攻击
+  	</div>
+</center>
+
+iDLG攻击如下
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231212193008716.png" width = "85%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">iDLG攻击
+  	</div>
+</center>
+
+### Tanh
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231212201024639.png" width = "85%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">iDLG攻击
+  	</div>
+</center>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./img/image-20231212201044606.png" width = "85%" alt=""/><br/>
+	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 5px;">iDLG攻击
+  	</div>
+</center>
 
 
 
@@ -158,7 +313,18 @@ def test(model, device, federated_test_loader, batch_size):
 >
 > **长尾**（英语：The Long Tail），或译**长尾效应**，是指那些原来不受到重视的销量小但种类多的产品或服务由于总量巨大，累积起来的总收益超过主流产品的现象。
 >
-> <img src="./img/image-20231210203955133.png" alt="image-20231210203955133" style="zoom: 33%;" />
+> <center>
+>     <img style="border-radius: 0.3125em;
+>     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+>     src="./img/image-20231210203955133.png" width = "55%" alt=""/><br/>
+> 	<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+>     display: inline-block;
+>     color: #999;
+>     padding: 5px;">iDLG攻击
+>   	</div>
+> </center>
+>
+> 
 
 ### 安装过程：
 
