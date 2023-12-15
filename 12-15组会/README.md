@@ -53,10 +53,9 @@ class Net(nn.Module):
     padding: 5px;">
   	</div>
 </center>
-
 ### LeNet-CIFAR100
 
-运行文件[fl_CIFAR100_LeNet](https://github.com/lao1a0/Iov-with-FL/blob/main/12-15组会/fl_CIFAR100_LeNet.ipynb)，模型是[ID LG ](https://colab.research.google.com/drive/1K6P2FD9XimFo5AeU0Iws4FOtZkkgzPy7)攻击的目标模型。因为这个模型用的数据集也是`CIFAR-100`，所以先看一下在联邦学习中模型精度如何，运行结果如下：`jupyter nbconvert --to html --execute fl_CIFAR100_LeNet.ipynb`
+运行文件[fl_CIFAR100_LeNet](https://github.com/lao1a0/Iov-with-FL/blob/main/12-15组会/fl_CIFAR100_LeNet.ipynb)，模型是[ID LG ](https://colab.research.google.com/drive/1K6P2FD9XimFo5AeU0Iws4FOtZkkgzPy7)攻击的目标模型。因为这个模型用的数据集也是`CIFAR-100`，所以__++++先看一下在联邦学习中模型精度如何，运行结果如下：`jupyter nbconvert --to html --execute fl_CIFAR100_LeNet.ipynb`
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -130,6 +129,7 @@ def test(model, device, federated_test_loader, batch_size):
   	</div>
 </center>
 
+
 考虑是不是fl的原因。不用fl直接训练，结果如下，证明确实是模型不行
 
 <center>
@@ -173,6 +173,7 @@ def test(model, device, federated_test_loader, batch_size):
   	</div>
 </center>
 
+
 > - **训练损失**：从4.63降低到0.10，表明模型在训练集上的拟合能力逐渐提高。
 > - **测试损失**：从2.58升高到4.14，表明模型在测试集上的泛化能力不足，==出现了过拟合现象==。
 > - **测试准确率**：从34%上升到40%，表明模型在测试集上的分类性能有所提升，但仍然不够理想。
@@ -195,6 +196,7 @@ def test(model, device, federated_test_loader, batch_size):
     padding: 5px;">不使用FL直接进行分类
   	</div>
 </center>
+
 
 > - 模型在训练集上的损失（loss）逐渐下降，但在测试集上的损失（loss）波动较大，甚至有上升的趋势。这说明模型可能存在**过拟合**（overfitting）的问题，即模型对训练数据过度拟合，而对测试数据的泛化能力不足。
 >
@@ -298,8 +300,7 @@ iDLG攻击如下
 
 
 
-
-# 复现Fed+cifar的算法
+# 复现Fed+cifar10的算法
 
 ## FedSAM
 
@@ -337,7 +338,7 @@ conda activate torch10 && cd data
 chmod +x setup_datasets.sh && ./setup_datasets.sh
 # 运行实验环境
 cd paper_experiments
-chmod +x cifar10.sh && ./cifar10.sh
-
+chmod +x cifar10.sh
+nohup ./cifar10.sh  > jp.log 2>&1 & # 后台挂起看结果
 ```
 
