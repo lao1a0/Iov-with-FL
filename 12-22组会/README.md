@@ -16,6 +16,14 @@
 
   
 
+ ```
+ nohup "jupyter nbconvert --to html --execute fl_CIFAR100_LeNet.ipynb"  > jp.log 2>&1 &
  
+ HrtGzAWte9t&mFw#fD
+ pip install tensorflow -i https://pypi.tuna.tsinghua.edu.cn/simple
+ pip install tensorboardX -i https://pypi.tuna.tsinghua.edu.cn/simple
+ ```
+
+
 
  
