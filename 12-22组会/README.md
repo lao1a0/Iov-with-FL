@@ -1,19 +1,14 @@
 # 工作安排
 
 - [ ] 看完[[2104.07586\] See through Gradients: Image Batch Recovery via GradInversion (arxiv.org)](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)这篇论文
-
 - [ ] 复现[[2104.07586\] See through Gradients: Image Batch Recovery via GradInversion (arxiv.org)](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)
-
-- [ ] 复现[LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning: Code for intrusion detection system development using CNN models and transfer learning (github.com)](https://github.com/LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning)
-
+- [x] 复现[LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning: Code for intrusion detection system development using CNN models and transfer learning (github.com)](https://github.com/LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning)
 - [ ] 复现[invertinggradients/environment.yml at master · JonasGeiping/invertinggradients (github.com)](https://github.com/JonasGeiping/invertinggradients/blob/master/environment.yml)
-
 - [ ] 看完[Dreaming to Distill: Data-free Knowledge Transfer via DeepInversion](https://blog.csdn.net/FengF2017/article/details/115698179)
-
 - [ ] 复现[NVlabs/DeepInversion](https://github.com/NVlabs/DeepInversion/tree/master)
+- [x] 在Cifar-10上重新做一次实验
 
-- [x] 在cifar-10上重新做一次实验
-
+# 配置
 
  ```python
  nohup "jupyter nbconvert --to html --execute fl_CIFAR100_LeNet.ipynb"  > jp.log 2>&1 &
@@ -22,6 +17,16 @@
  
  pip install tensorflow -i https://pypi.tuna.tsinghua.edu.cn/simple
  pip install tensorboardX -i https://pypi.tuna.tsinghua.edu.cn/simple
+ 
+ jupyter notebook --NotebookApp.iopub_msg_rate_limit=2000
+ jupyter notebook --NotebookApp.rate_limit_window=5.0
+ 
+ '''
+ (breaching) zhaojia-raoxy@tsz-server-TITIAN:~/breaching$ df -h .
+ Filesystem      Size  Used Avail Use% Mounted on
+ /dev/nvme0n1p2  916G  652G  218G  75% /
+ (breaching) zhaojia-raoxy@tsz-server-TITIAN:~/breaching$
+ '''
  ```
 
 
@@ -46,3 +51,8 @@
 
 - ResNet18会产生过拟合的现象，能够达到80%左右的准确率（）
 
+<img src="./img/3.png" style="zoom:80%;" />
+
+# 复现[LiYangHart](https://github.com/LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning)
+
+使用100%的数据量，复现一下原始的论文，并将keras的代码改成torch实现
