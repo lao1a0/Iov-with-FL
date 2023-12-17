@@ -53,6 +53,7 @@ class Net(nn.Module):
     padding: 5px;">
   	</div>
 </center>
+
 ### LeNet-CIFAR100
 
 运行文件[fl_CIFAR100_LeNet](https://github.com/lao1a0/Iov-with-FL/blob/main/12-15组会/fl_CIFAR100_LeNet.ipynb)，模型是[ID LG ](https://colab.research.google.com/drive/1K6P2FD9XimFo5AeU0Iws4FOtZkkgzPy7)攻击的目标模型。因为这个模型用的数据集也是`CIFAR-100`，所以__++++先看一下在联邦学习中模型精度如何，运行结果如下：`jupyter nbconvert --to html --execute fl_CIFAR100_LeNet.ipynb`
