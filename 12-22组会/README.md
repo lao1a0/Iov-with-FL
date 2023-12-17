@@ -27,6 +27,23 @@
  /dev/nvme0n1p2  916G  652G  218G  75% /
  (breaching) zhaojia-raoxy@tsz-server-TITIAN:~/breaching$
  '''
+ 
+ import torch
+ 
+ # 查看系统中的 GPU 数量
+ num_gpus = torch.cuda.device_count()
+ print(f"Number of available GPUs: {num_gpus}")
+ 
+ # 遍历每块 GPU，输出 GPU 的索引和剩余内存
+ for gpu_idx in range(num_gpus):
+     gpu_info = torch.cuda.get_device_properties(gpu_idx)
+     gpu_name = gpu_info.name
+     gpu_memory = torch.cuda.get_device_properties(gpu_idx).total_memory - torch.cuda.memory_allocated(gpu_idx)
+     
+     print(f"GPU {gpu_idx}: {gpu_name}")
+     print(f"  Total Memory: {gpu_info.total_memory / (1024 ** 3):.2f} GB")
+     print(f"  Used Memory: {(gpu_info.total_memory - gpu_memory) / (1024 ** 3):.2f} GB")
+     print(f"  Free Memory: {gpu_memory / (1024 ** 3):.2f} GB\n")
  ```
 
 
@@ -56,3 +73,16 @@
 # 复现[LiYangHart](https://github.com/LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning)
 
 使用100%的数据量，复现一下原始的论文，并将keras的代码改成torch实现
+
+- [2-CNN_Model_Development&Hyperparameter Optimization - Jupyter Notebook](http://127.0.0.1:8889/notebooks/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning/2-CNN_Model_Development%26Hyperparameter Optimization.ipynb#Model-2:-Xception-torch)：正在跑的实验，在car-hacking100%数据集上跑原论文中的代码
+- [CNN_CarHacking_nfl - Jupyter Notebook](http://127.0.0.1:8889/notebooks/CNN_CarHacking_nfl.ipynb)：在yeo-car-hacking100%数据集上进行原论文中CNN模型实验
+  - 结果非常垃圾
+- [CNN_CarHacking_fl - Jupyter Notebook](http://127.0.0.1:8889/notebooks/CNN_CarHacking_fl.ipynb#LeNet)：在上一步的基础上又添加上了联邦学习
+
+
+
+> 预计的效果：
+>
+> yeo-car-hacking出来的准确率什么的会比原论文的高（因为没有动过模型，就添加了数据增强这一步骤）
+>
+> yeo-car-hacing-fl出来的准确率什么的会比上一个实验高（这一步是从其他实验中得出来的）
