@@ -73,18 +73,38 @@
 # 复现[LiYangHart](https://github.com/LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning)
 
 - [x] 使用100%的数据量，复现一下原始的论文，并将keras的代码改成torch实现
+
 - [ ] [2-CNN_Model_Development&Hyperparameter Optimization - Jupyter Notebook](http://127.0.0.1:8889/notebooks/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning/2-CNN_Model_Development%26Hyperparameter Optimization.ipynb#Model-2:-Xception-torch)：正在跑的实验，在car-hacking100%数据集上跑原论文中的代码
   - [ ] 老是内核挂掉
+  
 - [x] [CNN_CarHacking_nfl - Jupyter Notebook](http://127.0.0.1:8889/notebooks/CNN_CarHacking_nfl.ipynb)：在yeo-car-hacking100%数据集上进行原论文中CNN模型实验
   - 结果非常垃圾（用的是我处理的数据集），单看ACC效果很好，但是在测试集上的混淆矩阵，效果就很差，根本没分类对
+  
+  - ```
+    精度:  0.20113862795331625
+    查准率P:  0.6628983443119103
+    召回率:  0.1991544532130778
+    F1 Score:  0.09560276011365174
+    ```
 
-<img src="./img/4.png" style="zoom: 80%;" />
-
-<img src="./img/44.png" style="zoom:80%;" />
+<img src="./img/4.png" style="zoom: 50%;" />
 
 
 
-- [ ] **在Li的100%数据集上进行实验{期待与上一个的实验结果是一样的}**		
+<img src="./img/44.png" style="zoom: 50%;" />
+
+- [x] **在Li的100%数据集上进行实验[CNN_CarHacking_nfl_ids.ipynb ](https://github.com/lao1a0/Iov-with-FL/blob/main/12-22组会/CNN_CarHacking_nfl_ids.ipynb)**	
+
+  ```
+  精度:  0.9210861870224725
+  查准率P:  0.47479161608804726
+  召回率:  0.6
+  F1 Score:  0.5088703027447286
+  ```
+
+<img src="./img/5.png" style="zoom: 50%;" />
+
+<img src="./img/55.png" style="zoom: 50%;" />
 
 - [x] [CNN_CarHacking_fl - Jupyter Notebook](http://127.0.0.1:8889/notebooks/CNN_CarHacking_fl.ipynb#LeNet)：在上一步的基础上又添加上了联邦学习
   - 结果非常垃圾（用的是我处理的数据集）
@@ -98,3 +118,5 @@
 # 复现[See through Gradients](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)
 
 [薰风写代码|手把手带你下载、处理、加载ImageNet数据集 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/378991398)
+
+[Iov-with-FL/12-22组会/See through Gradients - Optimization-based Attack - ResNet50 on ImageNet.ipynb at main · lao1a0/Iov-with-FL (github.com)](https://github.com/lao1a0/Iov-with-FL/blob/main/12-22组会/See through Gradients - Optimization-based Attack - ResNet50 on ImageNet.ipynb)
