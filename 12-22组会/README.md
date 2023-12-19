@@ -1,7 +1,7 @@
 # 工作安排
 
 - [ ] 看完[[2104.07586\] See through Gradients: Image Batch Recovery via GradInversion (arxiv.org)](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)这篇论文
-- [ ] 复现[[2104.07586\] See through Gradients: Image Batch Recovery via GradInversion (arxiv.org)](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)
+- [x] 复现[[2104.07586\] See through Gradients: Image Batch Recovery via GradInversion (arxiv.org)](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)
 - [x] 复现[LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning: Code for intrusion detection system development using CNN models and transfer learning (github.com)](https://github.com/LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning)
 - [ ] 复现[invertinggradients/environment.yml at master · JonasGeiping/invertinggradients (github.com)](https://github.com/JonasGeiping/invertinggradients/blob/master/environment.yml)
 - [ ] 看完[Dreaming to Distill: Data-free Knowledge Transfer via DeepInversion](https://blog.csdn.net/FengF2017/article/details/115698179)
@@ -72,18 +72,27 @@
 
 # 复现[LiYangHart](https://github.com/LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning)
 
-使用100%的数据量，复现一下原始的论文，并将keras的代码改成torch实现
+- [x] 使用100%的数据量，复现一下原始的论文，并将keras的代码改成torch实现
+- [ ] [2-CNN_Model_Development&Hyperparameter Optimization - Jupyter Notebook](http://127.0.0.1:8889/notebooks/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning/2-CNN_Model_Development%26Hyperparameter Optimization.ipynb#Model-2:-Xception-torch)：正在跑的实验，在car-hacking100%数据集上跑原论文中的代码
+  - [ ] 老是内核挂掉
+- [x] [CNN_CarHacking_nfl - Jupyter Notebook](http://127.0.0.1:8889/notebooks/CNN_CarHacking_nfl.ipynb)：在yeo-car-hacking100%数据集上进行原论文中CNN模型实验
+  - 结果非常垃圾（用的是我处理的数据集），单看ACC效果很好，但是在测试集上的混淆矩阵，效果就很差，根本没分类对
 
-- [2-CNN_Model_Development&Hyperparameter Optimization - Jupyter Notebook](http://127.0.0.1:8889/notebooks/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning/2-CNN_Model_Development%26Hyperparameter Optimization.ipynb#Model-2:-Xception-torch)：正在跑的实验，在car-hacking100%数据集上跑原论文中的代码
-- [CNN_CarHacking_nfl - Jupyter Notebook](http://127.0.0.1:8889/notebooks/CNN_CarHacking_nfl.ipynb)：在yeo-car-hacking100%数据集上进行原论文中CNN模型实验
+<img src="./img/4.png" style="zoom: 80%;" />
+
+<img src="./img/44.png" style="zoom:80%;" />
+
+- [ ] **在Li的100%数据集上进行实验{期待与上一个的实验结果是一样的}**		
+
+- [x] [CNN_CarHacking_fl - Jupyter Notebook](http://127.0.0.1:8889/notebooks/CNN_CarHacking_fl.ipynb#LeNet)：在上一步的基础上又添加上了联邦学习
   - 结果非常垃圾（用的是我处理的数据集）
-- [CNN_CarHacking_fl - Jupyter Notebook](http://127.0.0.1:8889/notebooks/CNN_CarHacking_fl.ipynb#LeNet)：在上一步的基础上又添加上了联邦学习
-  - 结果非常垃圾（用的是我处理的数据集）
-
-
 
 > 预计的效果：
 >
 > yeo-car-hacking出来的准确率什么的会比原论文的高（因为没有动过模型，就添加了数据增强这一步骤）
 >
 > yeo-car-hacing-fl出来的准确率什么的会比上一个实验高（这一步是从其他实验中得出来的）
+
+# 复现[See through Gradients](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)
+
+[薰风写代码|手把手带你下载、处理、加载ImageNet数据集 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/378991398)
