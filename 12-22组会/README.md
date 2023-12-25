@@ -44,6 +44,8 @@
      print(f"  Total Memory: {gpu_info.total_memory / (1024 ** 3):.2f} GB")
      print(f"  Used Memory: {(gpu_info.total_memory - gpu_memory) / (1024 ** 3):.2f} GB")
      print(f"  Free Memory: {gpu_memory / (1024 ** 3):.2f} GB\n")
+
+nohup jupyter nbconvert --to html --execute Intrusion-Detection-System-Using-CNN-and-Transfer-Learning/2-CNN_Model_Development\&Hyperparameter\ Optimization.ipynb > ids.log 2>&1 &
  ```
 
 
