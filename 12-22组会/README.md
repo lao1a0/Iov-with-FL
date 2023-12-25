@@ -48,11 +48,11 @@
 
 
 
-# cifar-10 实验
+# Cifar-10 实验
 
 > 重新修改了一下代码，进行500轮的训练。
 
-- LeNet加了联邦学习与不加的效果都是差不多，在测试集上能够达到65%左右的准确率（[noFL 64%](https://github.com/lao1a0/Iov-with-FL/blob/main/12-22组会/LeNet_CIFAR10_fl_no.ipynb);[FL 63%](https://github.com/lao1a0/Iov-with-FL/blob/main/12-22组会/LeNet_CIFAR10_fl.ipynb)）
+LeNet加了联邦学习与不加的效果都是差不多，在测试集上能够达到65%左右的准确率（[noFL 64%](https://github.com/lao1a0/Iov-with-FL/blob/main/12-22组会/LeNet_CIFAR10_fl_no.ipynb);[FL 63%](https://github.com/lao1a0/Iov-with-FL/blob/main/12-22组会/LeNet_CIFAR10_fl.ipynb)）
 
 <img src="./img/1.png" style="zoom: 80%;" />
 
@@ -87,11 +87,11 @@
     F1 Score:  0.09560276011365174
     ```
 
-<img src="./img/4.png" style="zoom: 50%;" />
+<img src="./img/4.png" style="zoom: 80%;" />
 
 
 
-<img src="./img/44.png" style="zoom: 50%;" />
+<img src="./img/44.png" style="zoom: 80%;" />
 
 - [x] **在Li的100%数据集上进行实验[CNN_CarHacking_nfl_ids.ipynb ](https://github.com/lao1a0/Iov-with-FL/blob/main/12-22组会/CNN_CarHacking_nfl_ids.ipynb)**	
 
@@ -102,9 +102,9 @@
   F1 Score:  0.5088703027447286
   ```
 
-<img src="./img/5.png" style="zoom: 50%;" />
+<img src="./img/5.png" style="zoom: 80%;" />
 
-<img src="./img/55.png" style="zoom: 50%;" />
+<img src="./img/55.png" style="zoom: 80%;" />
 
 - [x] [CNN_CarHacking_fl - Jupyter Notebook](http://127.0.0.1:8889/notebooks/CNN_CarHacking_fl.ipynb#LeNet)：在上一步的基础上又添加上了联邦学习
   - 结果非常垃圾（用的是我处理的数据集）
