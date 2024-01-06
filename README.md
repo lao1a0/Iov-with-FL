@@ -1,3 +1,10 @@
+```
+AutoDL 百度网盘的授权：
+AppID 46541325
+AppKey xBqSzZMDZoU4Vo0msGmqQjo7nhDFk5SW
+Secretkey DVN6ksPaNmN0MWDOhXarWSiM7dYGhfiX
+Signkey ToLJcu6FD7$Y7059jUxvvi8uf#D6-qdc
+```
 # 参考文献
 
 [‌⁡⁤⁤⁢⁤⁡⁢⁡⁣﻿⁡⁣‬⁣‌‬⁣⁡⁡⁡⁤‌‍⁣‍﻿‍⁡⁤‬‬⁤⁣⁡⁤⁢⁣研究点二 论文合集 - 飞书云文档 (feishu.cn)](https://z1q7kn87r2y.feishu.cn/docx/HnIWdhHsvoTGKtxphwWcosChnPc)
