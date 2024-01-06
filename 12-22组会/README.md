@@ -1,12 +1,16 @@
 # 工作安排
 
-- [ ] 看完[[2104.07586\] See through Gradients: Image Batch Recovery via GradInversion (arxiv.org)](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)这篇论文
+- [x] 看完[[2104.07586\] See through Gradients: Image Batch Recovery via GradInversion (arxiv.org)](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)这篇论文
+
 - [x] 复现[[2104.07586\] See through Gradients: Image Batch Recovery via GradInversion (arxiv.org)](https://ar5iv.labs.arxiv.org/html/2104.07586?_immersive_translate_auto_translate=1)
+
 - [x] 复现[LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning: Code for intrusion detection system development using CNN models and transfer learning (github.com)](https://github.com/LiYangHart/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning)
-- [ ] 复现[invertinggradients/environment.yml at master · JonasGeiping/invertinggradients (github.com)](https://github.com/JonasGeiping/invertinggradients/blob/master/environment.yml)
-- [ ] 看完[Dreaming to Distill: Data-free Knowledge Transfer via DeepInversion](https://blog.csdn.net/FengF2017/article/details/115698179)
-- [ ] 复现[NVlabs/DeepInversion](https://github.com/NVlabs/DeepInversion/tree/master)
+
+- [x] 看完[Dreaming to Distill: Data-free Knowledge Transfer via DeepInversion](https://blog.csdn.net/FengF2017/article/details/115698179)
+
 - [x] 在Cifar-10上重新做一次实验
+
+  
 
 # 配置
 
@@ -122,3 +126,4 @@ LeNet加了联邦学习与不加的效果都是差不多，在测试集上能够
 [薰风写代码|手把手带你下载、处理、加载ImageNet数据集 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/378991398)
 
 [Iov-with-FL/12-22组会/See through Gradients - Optimization-based Attack - ResNet50 on ImageNet.ipynb at main · lao1a0/Iov-with-FL (github.com)](https://github.com/lao1a0/Iov-with-FL/blob/main/12-22组会/See through Gradients - Optimization-based Attack - ResNet50 on ImageNet.ipynb)
+
