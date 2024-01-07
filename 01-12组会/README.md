@@ -62,6 +62,14 @@
 - [ ] 写完研究现状
 - [ ] 看完5篇硕士论文
 
+
+
+《GradViT: Gradient Inversion of Vision Transformers》《See through Gradients: Image Batch Recovery via GradInversion》《iDLG: Improved Deep Leakage from Gradients》，《Deep Leakage from Gradients》
+
+
+
+《Auditing Privacy Defenses in Federated Learning via Generative Gradient Leakage》，《Using Highly Compressed Gradients in Federated Learning for Data Reconstruction Attacks》，《Dreaming to Distill: Data-free Knowledge Transfer via DeepInversion》，《Inverting Gradients -- How easy is it to break privacy in federated learning?》，
+
 # 相关备忘录
 
 ## 评价指标：
