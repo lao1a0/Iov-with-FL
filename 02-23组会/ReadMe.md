@@ -7,3 +7,9 @@
 这个是我们的算法结果
 
 <img src="./img/2.png" style="zoom:67%;" />
+
+<img src="./img/3.png" style="zoom:67%;" />
+
+<img src="./img/4.png" style="zoom:67%;" />
+
+<img src="./img/image-20240220220005166-1708437612640-1.png" alt="image-20240220220005166" style="zoom:67%;" />
