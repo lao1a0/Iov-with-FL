@@ -1,0 +1,194 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: demo.aux
+The style file: GBT7714-2005NLang.bst
+A level-1 auxiliary file: chapters/thanks.aux
+A level-1 auxiliary file: chapters/abstract.aux
+A level-1 auxiliary file: chapters/englishabstract.aux
+A level-1 auxiliary file: chapters/preface.aux
+A level-1 auxiliary file: chapters/chapter04.aux
+A level-1 auxiliary file: chapters/index.aux
+A level-1 auxiliary file: chapters/mresume.aux
+A level-1 auxiliary file: chapters/statement.aux
+A level-1 auxiliary file: chapters/dataset.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: reference/ref.bib
+Repeated entry---line 938 of file reference/ref.bib
+ : @article{Automatic_Transformation_Search_Against_Deep_Leakage_From_Gradients
+ :                                                                             ,
+I'm skipping whatever remains of this entry
+-- BUPTThesis.bst version 0.2 (2009/01/25) by Yu Zhang.
+-- http://code.google.com/p/buptthesis/
+-- See the "userguide.pdf" manual for usage information.
+Warning--The editor in Neural_architecture_search_without_training is missing.
+Warning--empty editor in Neural_architecture_search_without_training
+Warning--The editor in Soteria is missing.
+Warning--empty editor in Soteria
+Warning--empty editor in cifar10
+Warning--empty booktitle in cifar10
+Warning--empty pages in cifar10
+Warning--empty pages in Fashion-MNIST
+Warning--empty editor in LFW
+Warning--empty booktitle in LFW
+Warning--empty pages in LFW
+Warning--The editor in DLG is missing.
+Warning--empty editor in DLG
+Warning--empty pages in DLG
+Warning--empty editor in Inverting_Gradients
+Warning--empty booktitle in Inverting_Gradients
+Warning--empty pages in Inverting_Gradients
+Warning--empty pages in Federated_learning_with_personalization_layers
+Warning--The refdate in ref1 is missing.
+Warning--empty pages in ref2
+Warning--The refdate in ref2 is missing.
+Warning--The editor in ref9 is missing.
+Warning--empty editor in ref9
+Warning--The editor in ref11 is missing.
+Warning--empty editor in ref11
+Warning--empty pages in ref14
+Warning--The refdate in ref14 is missing.
+Warning--The editor in ref16 is missing.
+Warning--empty editor in ref16
+Warning--empty pages in A_Transfer_Learning_and_Optimized_CNN_Based_Intrusion_Detection_System_for_Internet_of_Vehicles
+Warning--empty pages in ref18
+Warning--The refdate in ref21 is missing.
+Warning--The editor in Zhang03 is missing.
+Warning--empty editor in Zhang03
+Warning--empty pages in Zhang03
+Warning--The editor in HCAR is missing.
+Warning--empty editor in HCAR
+Warning--The refdate in yeo is missing.
+Warning--empty pages in Federated-AI-Enabled-IDS
+Warning--The refdate in Federated-AI-Enabled-IDS is missing.
+Warning--The editor in can_ids is missing.
+Warning--empty editor in can_ids
+Warning--The editor in Federated_Learning_Based_IDS_Approach_for_the_IoV is missing.
+Warning--empty editor in Federated_Learning_Based_IDS_Approach_for_the_IoV
+Warning--empty pages in Federated_Learning_Based_IDS_Approach_for_the_IoV
+Warning--The editor in Lagrange_Coded_Federated_Learning is missing.
+Warning--empty editor in Lagrange_Coded_Federated_Learning
+Warning--The editor in Federated-LSTM is missing.
+Warning--empty editor in Federated-LSTM
+Warning--The editor in Attack_IOV2 is missing.
+Warning--empty editor in Attack_IOV2
+Warning--The refdate in Data_communication_in_VANETs is missing.
+Warning--empty pages in Architecture_Protocols_and_Security_in_IoV
+Warning--The editor in Message_Sieving_to_Mitigate_Smart_Gridlock_Attacks_in_V2V is missing.
+Warning--empty editor in Message_Sieving_to_Mitigate_Smart_Gridlock_Attacks_in_V2V
+Warning--The editor in Drift_with_Devil_Security_of_Multi-Sensor_Fusion_based_Localization_in_High-Level_Autonomous_Driving_under_GPS_Spoofing is missing.
+Warning--empty editor in Drift_with_Devil_Security_of_Multi-Sensor_Fusion_based_Localization_in_High-Level_Autonomous_Driving_under_GPS_Spoofing
+Warning--empty pages in Drift_with_Devil_Security_of_Multi-Sensor_Fusion_based_Localization_in_High-Level_Autonomous_Driving_under_GPS_Spoofing
+Warning--empty pages in Intrusion_Detection_System_CAN-Bus_In_Vehicle_Networks_Based_on_the_Statistical_Characteristics_of_Attacks
+Warning--The refdate in Intrusion_Detection_System_CAN-Bus_In_Vehicle_Networks_Based_on_the_Statistical_Characteristics_of_Attacks is missing.
+Warning--empty pages in Defense_against_SSDF_Attack_and_PUE_Attack_in_CR-Internet_of_Vehicles_(IoVs)_for_Millimeter_Wave_Massive_MIMO_Beamforming_Systems
+Warning--The refdate in Defense_against_SSDF_Attack_and_PUE_Attack_in_CR-Internet_of_Vehicles_(IoVs)_for_Millimeter_Wave_Massive_MIMO_Beamforming_Systems is missing.
+Warning--The refdate in Cybersecurity_for_autonomous_vehicles_Review_of_attacks_and_defense is missing.
+Warning--The editor in Cloaking_the_Clock_Emulating_Clock_Skew_in_Controller_Area_Networks is missing.
+Warning--empty editor in Cloaking_the_Clock_Emulating_Clock_Skew_in_Controller_Area_Networks
+Warning--The refdate in A_lightweight_key_management_scheme_for_key-escrow-free_ECC-based_CP-ABE_for_IoT_healthcare_systems is missing.
+Warning--The editor in Attribute_Revocation_in_ECC-based_CP-ABE_scheme_for_lightweight_resource-constrained_devices is missing.
+Warning--empty editor in Attribute_Revocation_in_ECC-based_CP-ABE_scheme_for_lightweight_resource-constrained_devices
+Warning--There is month but no year in Introduction_to_the_controller_area_network_
+Warning--empty pages in Introduction_to_the_controller_area_network_
+Warning--The editor in Evolution_of_local_interconnect_network_solutions is missing.
+Warning--empty editor in Evolution_of_local_interconnect_network_solutions
+Warning--The editor in Flexray-a_communication_network_for_automotive_control_systems is missing.
+Warning--empty editor in Flexray-a_communication_network_for_automotive_control_systems
+Warning--The editor in Deep_Models_Under_the_GAN is missing.
+Warning--empty editor in Deep_Models_Under_the_GAN
+Warning--empty pages in iDLGID
+Warning--The refdate in iDLGID is missing.
+Warning--The editor in GradInversion is missing.
+Warning--empty editor in GradInversion
+Warning--The editor in GradViT is missing.
+Warning--empty editor in GradViT
+Warning--The editor in DeepInversion is missing.
+Warning--empty editor in DeepInversion
+Warning--The editor in GGL is missing.
+Warning--empty editor in GGL
+Warning--The editor in AutoAugment is missing.
+Warning--empty editor in AutoAugment
+Warning--empty pages in AutoAugment
+Warning--empty pages in Concealing_Sensitive_Samples_against_Gradient_Leakage_in_Federated_Learning
+Warning--The editor in DataLens_Scalable_Privacy_Preserving_Training_via_Gradient_Compression_and_Aggregation is missing.
+Warning--empty editor in DataLens_Scalable_Privacy_Preserving_Training_via_Gradient_Compression_and_Aggregation
+Warning--The editor in QP-LDP_for_better_global_model_performance_in_federated_learning is missing.
+Warning--empty editor in QP-LDP_for_better_global_model_performance_in_federated_learning
+Warning--The editor in Distributed_Learning_in_Trusted_Execution_Environment_A_Case_Study_of_Federated_Learning_in_SGX is missing.
+Warning--empty editor in Distributed_Learning_in_Trusted_Execution_Environment_A_Case_Study_of_Federated_Learning_in_SGX
+Warning--The editor in Efficient_Privacy-Preserving_Federated_Learning_Against_Inference_Attacks_for_IoT is missing.
+Warning--empty editor in Efficient_Privacy-Preserving_Federated_Learning_Against_Inference_Attacks_for_IoT
+Warning--The editor in Mixed_Quantization_Enabled_Federated_Learning_To_Tackle_Gradient_Inversion_Attacks is missing.
+Warning--empty editor in Mixed_Quantization_Enabled_Federated_Learning_To_Tackle_Gradient_Inversion_Attacks
+Warning--empty pages in FedML-HE_An_Efficient_Homomorphic-Encryption-Based_Privacy-Preserving_Federated_Learning_System
+Warning--empty pages in PriPrune_Quantifying_and_Preserving_Privacy_in_Pruned_Federated_Learning
+Warning--The refdate in Preserving_data_privacy_in_federated_learning_through_large_gradient_pruning is missing.
+Warning--The editor in Protect_Privacy_from_Gradient_Leakage_Attack_in_Federated_Learning is missing.
+Warning--empty editor in Protect_Privacy_from_Gradient_Leakage_Attack_in_Federated_Learning
+Warning--The editor in More_than_Enough_is_Too_Much_Adaptive_Defenses_against_Gradient_Leakage_in_Production_Federated_Learning is missing.
+Warning--empty editor in More_than_Enough_is_Too_Much_Adaptive_Defenses_against_Gradient_Leakage_in_Production_Federated_Learning
+Warning--The editor in Double_Perturbation-Based_Privacy-Preserving_Federated_Learning_against_Inference_Attack is missing.
+Warning--empty editor in Double_Perturbation-Based_Privacy-Preserving_Federated_Learning_against_Inference_Attack
+Warning--The editor in Targeted_Defense_Against_Neuron-Exclusivity-Based_Gradient_Inversion_Attack_in_Federated_Learning is missing.
+Warning--empty editor in Targeted_Defense_Against_Neuron-Exclusivity-Based_Gradient_Inversion_Attack_in_Federated_Learning
+Warning--The editor in An_Accuracy-Lossless_Perturbation_Method_for_Defending_Privacy_Attacks_in_Federated_Learning is missing.
+Warning--empty editor in An_Accuracy-Lossless_Perturbation_Method_for_Defending_Privacy_Attacks_in_Federated_Learning
+Warning--empty pages in Directional_Privacy_for_Deep_Learning
+Warning--The refdate in Directional_Privacy_for_Deep_Learning is missing.
+Warning--The editor in Safeguard_the_Original_Data_in_Federated_Learning_via_Data_Decomposition is missing.
+Warning--empty editor in Safeguard_the_Original_Data_in_Federated_Learning_via_Data_Decomposition
+Warning--The editor in PRECODE_A_Generic_Model_Extension_to_Prevent_Deep_Gradient_Leakage is missing.
+Warning--empty editor in PRECODE_A_Generic_Model_Extension_to_Prevent_Deep_Gradient_Leakage
+Warning--The editor in Privacy-preserving_Collaborative_Learning_with_Scalable_Image_Transformation_and_Autoencoder is missing.
+Warning--empty editor in Privacy-preserving_Collaborative_Learning_with_Scalable_Image_Transformation_and_Autoencoder
+Warning--empty editor in Model_Inversion_Attacks_that_Exploit_Confidence_Information_and_Basic_Countermeasures
+Warning--empty booktitle in Model_Inversion_Attacks_that_Exploit_Confidence_Information_and_Basic_Countermeasures
+Warning--The editor in Membership_Inference_Attacks_Against_Machine_Learning_Models is missing.
+Warning--empty editor in Membership_Inference_Attacks_Against_Machine_Learning_Models
+Warning--The editor in Property_Inference_Attacks_on_Fully_Connected_Neural_Networks_using_Permutation_Invariant_Representations is missing.
+Warning--empty editor in Property_Inference_Attacks_on_Fully_Connected_Neural_Networks_using_Permutation_Invariant_Representations
+
+Done.
+You've used 95 entries,
+            4577 wiz_defined-function locations,
+            1601 strings with 36007 characters,
+and the built_in function-call counts, 63093 in all, are:
+= -- 7060
+> -- 1070
+< -- 71
++ -- 649
+- -- 325
+* -- 5147
+:= -- 7054
+add.period$ -- 311
+call.type$ -- 95
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 222
+duplicate$ -- 4087
+empty$ -- 6709
+format.name$ -- 325
+if$ -- 15478
+int.to.chr$ -- 0
+int.to.str$ -- 95
+missing$ -- 0
+newline$ -- 505
+num.names$ -- 96
+pop$ -- 431
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1844
+stack$ -- 0
+substring$ -- 7525
+swap$ -- 1309
+text.length$ -- 71
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 958
+warning$ -- 127
+while$ -- 562
+width$ -- 97
+write$ -- 862
+(There was 1 error message)
