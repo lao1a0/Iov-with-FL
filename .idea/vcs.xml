@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/02-02组会/CaffeSVD" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/03-08组会/FedProx-PyTorch" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Book4_Power-of-Matrix" vcs="Git" />
   </component>
 </project>
