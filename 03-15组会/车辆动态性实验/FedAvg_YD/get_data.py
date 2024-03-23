@@ -26,7 +26,7 @@ def load_data(file_name):
     - 使用均值填充缺失值
     - 对第3到第6列进行归一化
     """
-    fn = '/home/raoxy/data/carhacking_bt/{}.csv'.format(file_name)
+    fn = '/home/raoxy/data/carhacking_csv/{}.csv'.format(file_name)
     # 进行病态非独立同分布用的数据集
     df = pd.read_csv(fn)
     # columns = df.columns

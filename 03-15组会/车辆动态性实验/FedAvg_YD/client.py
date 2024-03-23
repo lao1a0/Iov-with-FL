@@ -75,7 +75,7 @@ def train(args, model, server):
             # for w, w_t in zip(model.parameters(), global_model.parameters()):
             #     proximal_term += (w - w_t).norm(2)
 
-            loss = loss_function(y_pred, label) # + (args.mu / 2) * proximal_term
+            loss = loss_function(y_pred, label)  #+ (args.mu / 2) * proximal_term
             train_loss.append(loss.item())
             loss.backward()
             optimizer.step()
@@ -86,7 +86,7 @@ def train(args, model, server):
             min_val_loss = val_loss
             best_model = copy.deepcopy(model)
 
-        print('epoch {:03d} train_loss {:.8f} val_loss {:.8f}'.format(epoch, np.mean(train_loss), val_loss))
+        # print('epoch {:03d} train_loss {:.8f} val_loss {:.8f}'.format(epoch, np.mean(train_loss), val_loss))
 
         train_loss_.append(np.mean(train_loss))
         val_loss_.append(val_loss)

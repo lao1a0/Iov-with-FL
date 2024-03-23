@@ -12,8 +12,9 @@ import numpy as np
 import torch
 from tqdm import tqdm
 from model import SimpleClassifier
-from client import train, test
+from client import train, test, get_val_loss
 from get_data import nn_seq_wind
+
 
 class FedProx:
     def __init__(self, args):

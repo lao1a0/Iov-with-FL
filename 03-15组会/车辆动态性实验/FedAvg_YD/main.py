@@ -30,7 +30,17 @@ def main():
 
 if __name__ == '__main__':
     # 示例用法：删除目录“/path/to/your/directory”中的文件
+    import time
+
+    # 记录开始时间
+    start_time = time.time()
     delete_files_in_directory("csv")
     delete_files_in_directory("fig")
     delete_files_in_directory("model")
     main()
+    # 记录结束时间
+    end_time = time.time()
+
+    # 计算并打印代码执行时间
+    elapsed_time = end_time - start_time
+    print(f"代码执行时间: {elapsed_time} 秒")
