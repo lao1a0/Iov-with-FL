@@ -58,7 +58,7 @@ def deliver_data_to_car_dirichlet(root, alpha, n_clients=15):
         path = root + "car_{}/".format(i + 1)
         if not os.path.exists(path):
             os.makedirs(path)
-        client[i].to_csv(path + "car_{}.csv".format(i + 1))
+        client[i].to_csv(path + "car_{}.csv".format(i + 1),index=False)
 
     R = []
     Rpm = []
