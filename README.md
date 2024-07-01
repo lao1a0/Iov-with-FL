@@ -1,35 +1,12 @@
-```
-AutoDL 百度网盘的授权：
-AppID 46541325
-AppKey xBqSzZMDZoU4Vo0msGmqQjo7nhDFk5SW
-Secretkey DVN6ksPaNmN0MWDOhXarWSiM7dYGhfiX
-Signkey ToLJcu6FD7$Y7059jUxvvi8uf#D6-qdc
-```
 # 参考文献
 
 [‌⁡⁤⁤⁢⁤⁡⁢⁡⁣﻿⁡⁣‬⁣‌‬⁣⁡⁡⁡⁤‌‍⁣‍﻿‍⁡⁤‬‬⁤⁣⁡⁤⁢⁣研究点二 论文合集 - 飞书云文档 (feishu.cn)](https://z1q7kn87r2y.feishu.cn/docx/HnIWdhHsvoTGKtxphwWcosChnPc)
-
-# 指令快查
-
-服务器1：
-
-- 10.126.62.102:22
-- 用户名：zhaojia-raoxy
-- 密码：raoxy
-
-服务器2：
-- 59.65.191.29
-- 用户名：raoxy
-- 密码：raoxy@123
 
 ```python
 # conda
 conda create -n your_env_name python=x.x
 conda activate Soteria
 conda deactivate
-
-# 联网
-curl http:\/\/10.10.43.3\/drcom\/login\?callback=dr1558050177253\&DDDDD=22125303\&upass=Xrq@9686\&0MKKey=123456\&R1=0\&R3=0\&R6=0\&para=00\&v6ip=\&\_=1558050050455
 ```
 ## 后台挂机
 
